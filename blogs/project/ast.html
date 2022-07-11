@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AST | Maile‘s blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="May you travel in the ocean of front-end knowledge and enjoy it">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.87064c2e.css" as="style"><link rel="preload" href="/assets/js/app.830a5cc9.js" as="script"><link rel="preload" href="/assets/js/3.4d73c9a6.js" as="script"><link rel="preload" href="/assets/js/1.aba2294e.js" as="script"><link rel="preload" href="/assets/js/27.6953720f.js" as="script"><link rel="prefetch" href="/assets/js/10.5dddf6ba.js"><link rel="prefetch" href="/assets/js/11.34b79eaa.js"><link rel="prefetch" href="/assets/js/12.051a4c3d.js"><link rel="prefetch" href="/assets/js/13.43919eb1.js"><link rel="prefetch" href="/assets/js/14.4e2321a1.js"><link rel="prefetch" href="/assets/js/15.fac6a8ec.js"><link rel="prefetch" href="/assets/js/16.16de832a.js"><link rel="prefetch" href="/assets/js/17.c4efcbbf.js"><link rel="prefetch" href="/assets/js/18.c7744701.js"><link rel="prefetch" href="/assets/js/19.c2421190.js"><link rel="prefetch" href="/assets/js/20.653f0317.js"><link rel="prefetch" href="/assets/js/21.c3de642c.js"><link rel="prefetch" href="/assets/js/22.72723c62.js"><link rel="prefetch" href="/assets/js/23.17a5309d.js"><link rel="prefetch" href="/assets/js/24.ddcee5ef.js"><link rel="prefetch" href="/assets/js/25.190feede.js"><link rel="prefetch" href="/assets/js/26.13638e16.js"><link rel="prefetch" href="/assets/js/28.02f96b1c.js"><link rel="prefetch" href="/assets/js/29.b882511f.js"><link rel="prefetch" href="/assets/js/30.7a0a3da3.js"><link rel="prefetch" href="/assets/js/31.ea2bcad4.js"><link rel="prefetch" href="/assets/js/32.f8b64b5b.js"><link rel="prefetch" href="/assets/js/33.fb8444b8.js"><link rel="prefetch" href="/assets/js/34.a278ac83.js"><link rel="prefetch" href="/assets/js/35.763b5380.js"><link rel="prefetch" href="/assets/js/36.41d6f92f.js"><link rel="prefetch" href="/assets/js/37.936e06f6.js"><link rel="prefetch" href="/assets/js/38.83c04b06.js"><link rel="prefetch" href="/assets/js/39.379243ed.js"><link rel="prefetch" href="/assets/js/4.9550ba6d.js"><link rel="prefetch" href="/assets/js/40.b0a3dcf2.js"><link rel="prefetch" href="/assets/js/41.a19d7589.js"><link rel="prefetch" href="/assets/js/42.9596539e.js"><link rel="prefetch" href="/assets/js/43.b1794abe.js"><link rel="prefetch" href="/assets/js/44.fdbe31f2.js"><link rel="prefetch" href="/assets/js/45.2a432228.js"><link rel="prefetch" href="/assets/js/46.7421816b.js"><link rel="prefetch" href="/assets/js/47.2302f343.js"><link rel="prefetch" href="/assets/js/48.0239c8ab.js"><link rel="prefetch" href="/assets/js/49.ba5f7567.js"><link rel="prefetch" href="/assets/js/5.69148c59.js"><link rel="prefetch" href="/assets/js/50.95ba92cf.js"><link rel="prefetch" href="/assets/js/51.9ae7a74a.js"><link rel="prefetch" href="/assets/js/52.afa6c340.js"><link rel="prefetch" href="/assets/js/53.051a216d.js"><link rel="prefetch" href="/assets/js/54.5cf69d9d.js"><link rel="prefetch" href="/assets/js/55.ba77c95e.js"><link rel="prefetch" href="/assets/js/56.ebd0963d.js"><link rel="prefetch" href="/assets/js/57.7eadbc21.js"><link rel="prefetch" href="/assets/js/58.e9077c7c.js"><link rel="prefetch" href="/assets/js/59.690a513a.js"><link rel="prefetch" href="/assets/js/6.178f2e42.js"><link rel="prefetch" href="/assets/js/60.84ac0940.js"><link rel="prefetch" href="/assets/js/61.b4a3286a.js"><link rel="prefetch" href="/assets/js/62.794758f0.js"><link rel="prefetch" href="/assets/js/63.f1f7aa75.js"><link rel="prefetch" href="/assets/js/64.b8950eb0.js"><link rel="prefetch" href="/assets/js/65.c16e8e56.js"><link rel="prefetch" href="/assets/js/66.8974ef02.js"><link rel="prefetch" href="/assets/js/67.349a9d39.js"><link rel="prefetch" href="/assets/js/68.6411df5b.js"><link rel="prefetch" href="/assets/js/69.b23d05ef.js"><link rel="prefetch" href="/assets/js/7.67acb6d9.js"><link rel="prefetch" href="/assets/js/70.4209b515.js"><link rel="prefetch" href="/assets/js/71.e273d3fc.js"><link rel="prefetch" href="/assets/js/72.394df3e6.js"><link rel="prefetch" href="/assets/js/73.f27bb8d2.js"><link rel="prefetch" href="/assets/js/74.41d8bca0.js"><link rel="prefetch" href="/assets/js/75.8ca81b38.js"><link rel="prefetch" href="/assets/js/76.af20e2bb.js"><link rel="prefetch" href="/assets/js/77.69d77975.js"><link rel="prefetch" href="/assets/js/78.bdb9d409.js"><link rel="prefetch" href="/assets/js/79.97081011.js"><link rel="prefetch" href="/assets/js/8.b2f3c57d.js"><link rel="prefetch" href="/assets/js/80.e179847d.js"><link rel="prefetch" href="/assets/js/81.8c8507da.js"><link rel="prefetch" href="/assets/js/82.c9b7f1ad.js"><link rel="prefetch" href="/assets/js/9.64b61bd3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.87064c2e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-999d3bb4><div data-v-999d3bb4><div id="loader-wrapper" class="loading-wrapper" data-v-2c578df8 data-v-999d3bb4 data-v-999d3bb4><div class="loader-main" data-v-2c578df8><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-067bd032 data-v-999d3bb4 data-v-999d3bb4><h3 class="title" data-v-067bd032 data-v-067bd032>Maile‘s blog</h3> <p class="description" data-v-067bd032 data-v-067bd032>May you travel in the ocean of front-end knowledge and enjoy it</p> <label id="box" class="inputBox" data-v-067bd032 data-v-067bd032><input type="password" value="" data-v-067bd032> <span data-v-067bd032>Konck! Knock!</span> <button data-v-067bd032>OK</button></label> <div class="footer" data-v-067bd032 data-v-067bd032><span data-v-067bd032><i class="iconfont reco-theme" data-v-067bd032></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-067bd032>vuePress-theme-reco</a></span> <span data-v-067bd032><i class="iconfont reco-copyright" data-v-067bd032></i> <a data-v-067bd032><span data-v-067bd032>maile</span>
+            
+          <span data-v-067bd032>2017 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-999d3bb4><header class="navbar" data-v-999d3bb4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Maile‘s blog" class="logo"> <span class="site-name">Maile‘s blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/js/constant.html" class="nav-link"><i class="undefined"></i>
+  变量
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/constructor.html" class="nav-link"><i class="undefined"></i>
+  构造函数&amp;继承
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/es6.html" class="nav-link"><i class="undefined"></i>
+  es6基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/generator.html" class="nav-link"><i class="undefined"></i>
+  Generator函数原理
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/promise.html" class="nav-link"><i class="undefined"></i>
+  Promsie相关
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/this.html" class="nav-link"><i class="undefined"></i>
+  作用域 &amp; this
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/obj.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象模型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/event.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象事件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/request.html" class="nav-link"><i class="undefined"></i>
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/history.html" class="nav-link"><i class="undefined"></i>
+  浏览器历史记录
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/broswer.html" class="nav-link"><i class="undefined"></i>
+  浏览器渲染原理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      TS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/ts/prepare.html" class="nav-link"><i class="undefined"></i>
+  准备
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/base.html" class="nav-link"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/inner.html" class="nav-link"><i class="undefined"></i>
+  内置类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/high.html" class="nav-link"><i class="undefined"></i>
+  高级
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/class.html" class="nav-link"><i class="undefined"></i>
+  class
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/function.html" class="nav-link"><i class="undefined"></i>
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/enum.html" class="nav-link"><i class="undefined"></i>
+  枚举
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/declare.html" class="nav-link"><i class="undefined"></i>
+  声明
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interface.html" class="nav-link"><i class="undefined"></i>
+  接口
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/configs.html" class="nav-link"><i class="undefined"></i>
+  项目配置
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/other.html" class="nav-link"><i class="undefined"></i>
+  其它
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interview.html" class="nav-link"><i class="undefined"></i>
+  面试相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/project/module.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/web-components.html" class="nav-link"><i class="undefined"></i>
+  web-components
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/microFrontends.html" class="nav-link"><i class="undefined"></i>
+  microFrontends
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/lerna.html" class="nav-link"><i class="undefined"></i>
+  多模块仓库
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/ast.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  AST
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/babel.html" class="nav-link"><i class="undefined"></i>
+  Babel
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      react
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/react/react-base.html" class="nav-link"><i class="undefined"></i>
+  react基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/react-super.html" class="nav-link"><i class="undefined"></i>
+  react进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-hooks.html" class="nav-link"><i class="undefined"></i>
+  react-hooks
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-vdom.html" class="nav-link"><i class="undefined"></i>
+  react虚拟Dom
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-diff.html" class="nav-link"><i class="undefined"></i>
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-fiber.html" class="nav-link"><i class="undefined"></i>
+  react-fiber
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-comp.html" class="nav-link"><i class="undefined"></i>
+  react-comp
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/redux.html" class="nav-link"><i class="undefined"></i>
+  redux
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-redux.html" class="nav-link"><i class="undefined"></i>
+  react-redux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/vue/base.html" class="nav-link"><i class="undefined"></i>
+  vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/super.html" class="nav-link"><i class="undefined"></i>
+  vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-cli.html" class="nav-link"><i class="undefined"></i>
+  vue-cli源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router-base.html" class="nav-link"><i class="undefined"></i>
+  vue-router基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-ssr.html" class="nav-link"><i class="undefined"></i>
+  vue-ssr
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue2-source.html" class="nav-link"><i class="undefined"></i>
+  vue2.x
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue3-source.html" class="nav-link"><i class="undefined"></i>
+  vue3.x源码
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/node/command.html" class="nav-link"><i class="undefined"></i>
+  命令行工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/base.html" class="nav-link"><i class="undefined"></i>
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/event.html" class="nav-link"><i class="undefined"></i>
+  事件循环
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/koa.html" class="nav-link"><i class="undefined"></i>
+  koa源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/protocol.html" class="nav-link"><i class="undefined"></i>
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/node-decorators.html" class="nav-link"><i class="undefined"></i>
+  装饰器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其它
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/other/performance1.html" class="nav-link"><i class="undefined"></i>
+  性能优化一
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/mini-app.html" class="nav-link"><i class="undefined"></i>
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/canvas.html" class="nav-link"><i class="undefined"></i>
+  Canvas
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/artadmire" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-999d3bb4></div> <aside class="sidebar" data-v-999d3bb4><div class="personal-info-wrapper" data-v-e2878dae data-v-999d3bb4><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-e2878dae> <h3 class="name" data-v-e2878dae>
+    maile
+  </h3> <div class="num" data-v-e2878dae><div data-v-e2878dae><h3 data-v-e2878dae>68</h3> <h6 data-v-e2878dae>Articles</h6></div> <div data-v-e2878dae><h3 data-v-e2878dae>0</h3> <h6 data-v-e2878dae>Tags</h6></div></div> <ul class="social-links" data-v-e2878dae></ul> <hr data-v-e2878dae></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/js/constant.html" class="nav-link"><i class="undefined"></i>
+  变量
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/constructor.html" class="nav-link"><i class="undefined"></i>
+  构造函数&amp;继承
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/es6.html" class="nav-link"><i class="undefined"></i>
+  es6基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/generator.html" class="nav-link"><i class="undefined"></i>
+  Generator函数原理
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/promise.html" class="nav-link"><i class="undefined"></i>
+  Promsie相关
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/this.html" class="nav-link"><i class="undefined"></i>
+  作用域 &amp; this
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/obj.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象模型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/event.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象事件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/request.html" class="nav-link"><i class="undefined"></i>
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/history.html" class="nav-link"><i class="undefined"></i>
+  浏览器历史记录
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/broswer.html" class="nav-link"><i class="undefined"></i>
+  浏览器渲染原理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      TS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/ts/prepare.html" class="nav-link"><i class="undefined"></i>
+  准备
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/base.html" class="nav-link"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/inner.html" class="nav-link"><i class="undefined"></i>
+  内置类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/high.html" class="nav-link"><i class="undefined"></i>
+  高级
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/class.html" class="nav-link"><i class="undefined"></i>
+  class
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/function.html" class="nav-link"><i class="undefined"></i>
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/enum.html" class="nav-link"><i class="undefined"></i>
+  枚举
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/declare.html" class="nav-link"><i class="undefined"></i>
+  声明
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interface.html" class="nav-link"><i class="undefined"></i>
+  接口
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/configs.html" class="nav-link"><i class="undefined"></i>
+  项目配置
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/other.html" class="nav-link"><i class="undefined"></i>
+  其它
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interview.html" class="nav-link"><i class="undefined"></i>
+  面试相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/project/module.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/web-components.html" class="nav-link"><i class="undefined"></i>
+  web-components
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/microFrontends.html" class="nav-link"><i class="undefined"></i>
+  microFrontends
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/lerna.html" class="nav-link"><i class="undefined"></i>
+  多模块仓库
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/ast.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  AST
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/babel.html" class="nav-link"><i class="undefined"></i>
+  Babel
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      react
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/react/react-base.html" class="nav-link"><i class="undefined"></i>
+  react基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/react-super.html" class="nav-link"><i class="undefined"></i>
+  react进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-hooks.html" class="nav-link"><i class="undefined"></i>
+  react-hooks
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-vdom.html" class="nav-link"><i class="undefined"></i>
+  react虚拟Dom
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-diff.html" class="nav-link"><i class="undefined"></i>
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-fiber.html" class="nav-link"><i class="undefined"></i>
+  react-fiber
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-comp.html" class="nav-link"><i class="undefined"></i>
+  react-comp
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/redux.html" class="nav-link"><i class="undefined"></i>
+  redux
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-redux.html" class="nav-link"><i class="undefined"></i>
+  react-redux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/vue/base.html" class="nav-link"><i class="undefined"></i>
+  vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/super.html" class="nav-link"><i class="undefined"></i>
+  vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-cli.html" class="nav-link"><i class="undefined"></i>
+  vue-cli源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router-base.html" class="nav-link"><i class="undefined"></i>
+  vue-router基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-ssr.html" class="nav-link"><i class="undefined"></i>
+  vue-ssr
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue2-source.html" class="nav-link"><i class="undefined"></i>
+  vue2.x
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue3-source.html" class="nav-link"><i class="undefined"></i>
+  vue3.x源码
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/node/command.html" class="nav-link"><i class="undefined"></i>
+  命令行工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/base.html" class="nav-link"><i class="undefined"></i>
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/event.html" class="nav-link"><i class="undefined"></i>
+  事件循环
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/koa.html" class="nav-link"><i class="undefined"></i>
+  koa源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/protocol.html" class="nav-link"><i class="undefined"></i>
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/node-decorators.html" class="nav-link"><i class="undefined"></i>
+  装饰器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其它
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/other/performance1.html" class="nav-link"><i class="undefined"></i>
+  性能优化一
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/mini-app.html" class="nav-link"><i class="undefined"></i>
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/canvas.html" class="nav-link"><i class="undefined"></i>
+  Canvas
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/artadmire" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span></span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/project/module.html" class="sidebar-link">模块化</a></li><li><a href="/blogs/project/web-components.html" class="sidebar-link">Web Components</a></li><li><a href="/blogs/project/microFrontends.html" class="sidebar-link">微前端</a></li><li><a href="/blogs/project/lerna.html" class="sidebar-link">搭建多模块仓库</a></li><li><a href="/blogs/project/ast.html" aria-current="page" class="active sidebar-link">AST</a></li><li><a href="/blogs/project/babel.html" class="sidebar-link">bable</a></li><li><a href="/blogs/project/webpack.html" class="sidebar-link">webapck</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-067bd032 data-v-999d3bb4><h3 class="title" data-v-067bd032 data-v-067bd032></h3> <!----> <label id="box" class="inputBox" data-v-067bd032 data-v-067bd032><input type="password" value="" data-v-067bd032> <span data-v-067bd032>Konck! Knock!</span> <button data-v-067bd032>OK</button></label> <div class="footer" data-v-067bd032 data-v-067bd032><span data-v-067bd032><i class="iconfont reco-theme" data-v-067bd032></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-067bd032>vuePress-theme-reco</a></span> <span data-v-067bd032><i class="iconfont reco-copyright" data-v-067bd032></i> <a data-v-067bd032><span data-v-067bd032>maile</span>
+            
+          <span data-v-067bd032>2017 - </span>
+          2022
+        </a></span></div></div> <div data-v-999d3bb4><main class="page"><section><div class="page-title"><h1 class="title">AST</h1> <div data-v-10e19382><i class="iconfont reco-account" data-v-10e19382><span data-v-10e19382>maile</span></i> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h1 id="ast"><a href="#ast" class="header-anchor">#</a> AST</h1> <h2 id="概念"><a href="#概念" class="header-anchor">#</a> 概念</h2> <p>抽象语法树（Abstract Syntax Tree）简称AST，顾名思义，是一棵树，用分支和节点的组合来描述代码
+结构。</p> <p>来看看AST长什么样？比如箭头函数：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>上面的表达式如果要用json形式来描述，需要有什么呢？</p> <ul><li>我需要知道这个表达式是什么？给一个属性type来表述，这里是VariableDeclaration。</li> <li>变量声明用var let const，我需要知道什么形式的声明？用kind属性来描述const。</li> <li>id保存变量名，name属性值为add。</li> <li>init保存变量值，type为ArrowFunctionExpression</li> <li>init的params描述入参，body描述函数体信息</li></ul> <p>转化为ast后(json形式)：</p> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Program&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;body&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;VariableDeclaration&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;declarations&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;VariableDeclarator&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">27</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Identifier&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;add&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;init&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ArrowFunctionExpression&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">27</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;expression&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;generator&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;async&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;params&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Identifier&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">13</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;a&quot;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Identifier&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">17</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;b&quot;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;body&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BinaryExpression&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">27</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;left&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Identifier&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;a&quot;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;operator&quot;</span><span class="token operator">:</span> <span class="token string">&quot;+&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;right&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Identifier&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">26</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">27</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;b&quot;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;kind&quot;</span><span class="token operator">:</span> <span class="token string">&quot;const&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;sourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;module&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br></div></div><p>在AST中，每个节点都有自己的type以及一系列相关属性来描述它。</p> <h2 id="应用场景"><a href="#应用场景" class="header-anchor">#</a> 应用场景</h2> <p>为什么要将简单的一行代码，解析为这么大一颗树呢？来看下面一个例子：</p> <ol><li>先新建一个test的工程目录</li> <li>在test工程下安装esprima、estraverse、escodegen的npm模块</li></ol> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">npm</span> i esprima estraverse escodegen --save
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol start="3"><li>在目录下面新建一个esprima.js文件,载入以下代码：</li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> esprima <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'esprima'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> code <span class="token operator">=</span> <span class="token string">'const a = 1'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> ast <span class="token operator">=</span> esprima<span class="token punctuation">.</span><span class="token function">parseScript</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// console.log(ast);</span>
+
+<span class="token comment">// Script {</span>
+<span class="token comment">//   type: 'Program',</span>
+<span class="token comment">//   body: [</span>
+<span class="token comment">//     VariableDeclaration {</span>
+<span class="token comment">//       type: 'VariableDeclaration',</span>
+<span class="token comment">//       declarations: [Array],</span>
+<span class="token comment">//       kind: 'const'</span>
+<span class="token comment">//     }</span>
+<span class="token comment">//   ],</span>
+<span class="token comment">//   sourceType: 'script'</span>
+<span class="token comment">// }</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><ol start="3"><li>再载入以下代码：</li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code>
+<span class="token keyword">const</span> estraverse <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'estraverse'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+estraverse<span class="token punctuation">.</span><span class="token function">traverse</span><span class="token punctuation">(</span>ast<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">enter</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+      node<span class="token punctuation">.</span>kind <span class="token operator">=</span> <span class="token string">&quot;var&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// node的打印</span>
+Script <span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Program'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    VariableDeclaration <span class="token punctuation">{</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'VariableDeclaration'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">declarations</span><span class="token operator">:</span> <span class="token punctuation">[</span>Array<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">kind</span><span class="token operator">:</span> <span class="token string">'const'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">sourceType</span><span class="token operator">:</span> <span class="token string">'script'</span>
+<span class="token punctuation">}</span>
+VariableDeclaration <span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'VariableDeclaration'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">declarations</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    VariableDeclarator <span class="token punctuation">{</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'VariableDeclarator'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token punctuation">[</span>Identifier<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">init</span><span class="token operator">:</span> <span class="token punctuation">[</span>Literal<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">kind</span><span class="token operator">:</span> <span class="token string">'const'</span>
+<span class="token punctuation">}</span>
+VariableDeclarator <span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'VariableDeclarator'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">id</span><span class="token operator">:</span> Identifier <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Identifier'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'a'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">init</span><span class="token operator">:</span> Literal <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Literal'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">raw</span><span class="token operator">:</span> <span class="token string">'1'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+Identifier <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Identifier'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'a'</span> <span class="token punctuation">}</span>
+Literal <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Literal'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">raw</span><span class="token operator">:</span> <span class="token string">'1'</span> <span class="token punctuation">}</span>
+<span class="token constant">PS</span> <span class="token constant">E</span><span class="token operator">:</span>\study\<span class="token function">ast</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>\test<span class="token operator">-</span>ast1<span class="token operator">&gt;</span> node <span class="token punctuation">.</span>\esprima<span class="token punctuation">.</span>js
+Script <span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Program'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    VariableDeclaration <span class="token punctuation">{</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'VariableDeclaration'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">declarations</span><span class="token operator">:</span> <span class="token punctuation">[</span>Array<span class="token punctuation">]</span><span class="token punctuation">,</span>      
+      <span class="token literal-property property">kind</span><span class="token operator">:</span> <span class="token string">'const'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">sourceType</span><span class="token operator">:</span> <span class="token string">'script'</span>
+<span class="token punctuation">}</span>
+VariableDeclaration <span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'VariableDeclaration'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">declarations</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    VariableDeclarator <span class="token punctuation">{</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'VariableDeclarator'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token punctuation">[</span>Identifier<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">init</span><span class="token operator">:</span> <span class="token punctuation">[</span>Literal<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">kind</span><span class="token operator">:</span> <span class="token string">'const'</span>
+<span class="token punctuation">}</span>
+VariableDeclarator <span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'VariableDeclarator'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">id</span><span class="token operator">:</span> Identifier <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Identifier'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'a'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">init</span><span class="token operator">:</span> Literal <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Literal'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">raw</span><span class="token operator">:</span> <span class="token string">'1'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+Identifier <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Identifier'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'a'</span> <span class="token punctuation">}</span>
+Literal <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'Literal'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">raw</span><span class="token operator">:</span> <span class="token string">'1'</span> <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br></div></div><p>经过以上过程以后，会将所有的const声明，转化为var。</p> <ol start="5"><li>最后在文件中，加入以下代码：</li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> escodegen <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&quot;escodegen&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> transformCode <span class="token operator">=</span> escodegen<span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span>ast<span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>transformCode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>输出结果：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>AST在前端开发中应用非常广泛，尽管你平时可能见不到，但其实你几乎每天在用。如：</p> <ul><li>代码高亮、格式化、错误提示、自动补全等：ESlint、Prettier、Vetur等。</li> <li>代码压缩混淆：uglifyJS等。</li> <li>代码转译：webpack、babel、TypeScript等。</li></ul> <h2 id="ast生成"><a href="#ast生成" class="header-anchor">#</a> AST生成</h2> <p>AST的生成是个复杂度极高过程，我们只关心一个关键概念——<strong>编译</strong>，以及两个关键步骤——词法分
+析，语法分析，下面对其做简单介绍。</p> <p><strong>什么是编译？</strong></p> <p>编译，就是把一⻔编程语言转成另一⻔编程语言的过程，一般是指高级语言到低级语言。</p> <p><strong>编译的过程</strong></p> <p>编译的本质就是转换，而转换的前提则是要理解被转换的东⻄，前面提到编译器通过AST理解高级语言
+代码，因此编译的第一步就是解析源代码，得到AST。具体来讲这个解析的过程分为如下几步：</p> <ol><li>词法分析：</li></ol> <p>这个过程会将由字符组成的字符串分解成（对编程语言来说）有意义的代码块，这些代
+码块被称为词法单元（token）。例如，考虑程序 var a = 2;。这段程序通常会被分解成
+为下面这些词法单元：var、a、=、2 、;。空格是否会被当作词法单元，取决于空格在
+这门语言中是否具有意义。即词法分析阶段把会字符串形式的代码转换为 令牌（tokens） 流。</p> <p>如：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">[</span>  <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;KEYWORD_CONST&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">&quot;const&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;VARIABLE&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">&quot;a&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+ <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;OPERATOR_EQUAL&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">&quot;=&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">&quot;INTEGER&quot;</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">&quot;10&quot;</span> <span class="token punctuation">}</span>  <span class="token operator">...</span><span class="token punctuation">]</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol start="2"><li>语法分析：</li></ol> <p>这个过程是将词法单元流（数组）转换成一个由元素逐级嵌套所组成的代表了程序语法
+结构的树。</p> <h2 id="如何理解"><a href="#如何理解" class="header-anchor">#</a> 如何理解?</h2> <p>要对AST做处理，要清楚他的基本结构，节点类型，这将是我们基于AST进行实际应用的基础。 首先我
+们回顾前文的AST结构。我们会注意到，AST 的每一层都拥有近乎相同的结构，都有一个type属性以及
+一系列描述属性，type属性用来表示节点的类型（CallExpression,Identifier,MemberExpression等等）。这样的每一层结构称为一个 节点（Node）。 一个 AST 可以由单一的节点或是成百上千个节点构
+成。</p> <p>抽象语法树有一套约定的规范：<a href="https://github.com/estree/estree" target="_blank" rel="noopener noreferrer">GitHub - estree/estree: The ESTree Spec<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>, 社区称为 estree。借助这个约定的 AST 规范，整个前端社区，生产类工具统一产出该格式的数据结构而无需关心下游，消费类工具统一使用该格式进行处理而无需关心上游。 AST的所有节点类型可分为以下几个大类：字面量、标识符、表达式、语句、模块语法，每个大类下又分类多个子类，下面介绍一些基本且开发常用的节点类型 ，更全面的信息可以查文档或者在ASTExplorer中具体查看。</p> <h4 id="literal-字面量"><a href="#literal-字面量" class="header-anchor">#</a> Literal 字面量</h4> <ul><li>StringLiteral 字符串字面量（&quot;foo&quot;）</li> <li>NumericLiteral 数值字面量（123）</li> <li>BooleanLiteral 布尔字面量 （true）</li> <li>TemplateLiteral 模板字面量 （${obj}</li></ul> <h3 id="dentifier-标识符"><a href="#dentifier-标识符" class="header-anchor">#</a> dentifier 标识符</h3> <p>标识符即各种声明与引用的名字，js中的变量名，函数名，属性名等都是标识符。如下面代码中的
+bar,foo,num都是标识符。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> bar <span class="token operator">=</span> <span class="token function">foo</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="statement-语句"><a href="#statement-语句" class="header-anchor">#</a> Statement 语句</h3> <p>是一段可以独立执行的代码。下面代码的每一行都是一条语句。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> a<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>Statement 分为众多子类型，下面举几个例子。</p> <p>以上就是AST的一些基本结构。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">return</span> a<span class="token punctuation">;</span> <span class="token comment">// ReturnStatement </span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>  <span class="token comment">// TryStatement} </span>
+<span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> index <span class="token operator">&lt;</span> array<span class="token punctuation">.</span>length<span class="token punctuation">;</span> index<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// ForStatement  </span>
+<span class="token keyword">const</span> element <span class="token operator">=</span> array<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// WhileStatement1</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="declaration-声明语句"><a href="#declaration-声明语句" class="header-anchor">#</a> Declaration 声明语句</h3> <p>他是一种特殊的语句，用于在作用域内声明变量、函数、class、import、export 等，同样有众多子类
+型。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// VariableDeclaration</span>
+<span class="token keyword">function</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// Function</span>
+Declarationclass <span class="token constant">C</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// ClassDeclaration1</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="expression-表达式"><a href="#expression-表达式" class="header-anchor">#</a> Expression 表达式</h3> <p>表达式与语句的区别是表达式执行后会有返回结果，举例:</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// AssignmentExpression</span>
+a<span class="token operator">+</span>b<span class="token punctuation">;</span> <span class="token comment">// BinaryExpression</span>
+<span class="token keyword">this</span>；<span class="token comment">// ThisExpression</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="modules-es-module模块语法"><a href="#modules-es-module模块语法" class="header-anchor">#</a> Modules ES module模块语法</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> name <span class="token keyword">from</span> <span class="token string">'name'</span><span class="token punctuation">;</span> <span class="token comment">// ImportDeclaration</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> newName <span class="token operator">=</span> <span class="token string">'newName'</span><span class="token punctuation">;</span> <span class="token comment">// ExportNamedDeclaration</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> name<span class="token punctuation">;</span> <span class="token comment">// ExportDefaultDeclaration</span>
+<span class="token keyword">export</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token string">'name'</span><span class="token punctuation">;</span> <span class="token comment">// ExportAllDeclaration1</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="program-directive"><a href="#program-directive" class="header-anchor">#</a> Program &amp; Directive</h3> <p>`</p> <p>program 是代表整个程序的节点，它包裹了所有具体执行语句的节点，而Directive则是代码中的指令部
+分。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token string">&quot;use strict&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Program&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;body&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ExpressionStatement&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;expression&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Literal&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;end&quot;</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;use strict&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;raw&quot;</span><span class="token operator">:</span> <span class="token string">&quot;\&quot;use strict\&quot;&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;directive&quot;</span><span class="token operator">:</span> <span class="token string">&quot;use strict&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;sourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;module&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>AST编译流程图:</p> <p><img src="data:image/png;base64,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/FrbS0mI7mlCrJqAKJd5MKPCdUchpLrYu4FvzOkT/4lemgm4MjdGCdLAS8RMaYc4ns+SRctOk+sv9+VTspxTR1zq8fRfus/VL+h3Ha9FWp47B1XxIiJLXtC1AHSmGEc5gN+pNlJrStoyE+7YGSLCQNhU+v1OKz3mDI1s5ruMEXAmjYa4wr0mODQ1Fr8tZ0CjLBWq4kVElgnLTEhMjsXb+dVmq2JjaaskNnKIQ6yiiQhN9PGf+KHp6Ldt5gWgi11McYoGZ9JokDhdtLla7cVN6SSFoCpeRGSZCGA5ORuSbfUQTzFbwvvNvOAsm3JqDp9jL0vj5RoWl13rA0ykJWSGxlIXiMxCVbyIyLIR54RZmicpSHyGKr6fMM8x5Fray66WV7EG+HDa5Ew/ZR1+niBIg2vKafrKiTFOlro4ZBaq4kVEloFJrhHniFlKdS5CdNNJgBjvZLTi4yaQKznOvpKnXNHfcdrZgh84yzhDruWn1YpfblTFi4gseRbHqeKka8W36Ubg404SltSanZmt+OTa5b/Pyr84xTnOEcKPxV5asbDYZtZIXGIrT8ocqIoXEVnyLvIMfkJZLfj0+ex2HruNWUlYMsfiL1LHd3if92hiB3ez0qRyqWCEBoLEOQj04wUC9NPOgJnel00z6pcyVfEiIkueHVEdzFmdep1cjLnXo3fnZbBzQzzuSipkL56SbJ8HnPa6+/07zKfLcqNlaERERMqSqngREZGypCpeRESkLKmKFxERKUuq4kVERMqSqngREZGypCpeRESkLKmKFxERKUuq4kVERMrSvLLbfVrqrRYREZFZzKuK/3el3moRERGZRf5V/KdqxIuIiCx9eVfxF7z5vmLpulDqDRARESkaTbcTEREpS6riRUREypLWi18GrpV6A5aND0u9AaKjtSA+5uNSb0JZuvmOTlXxS96hUm/AMrK11Btw03uN10q9CWVBR3IxPFbqDSgBVfFL3Qel3oBl43qpN0B0tBbER3xU6k0oSzo6RUREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREpCz8f4IzC+jkOi7YAAAAAElFTkSuQmCC" alt="ast流程图"></p> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ol><li>《你不知道的JavaScript》</li> <li><a href="https://astexplorer.net/" target="_blank" rel="noopener noreferrer">ast在线生产<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://juejin.cn/post/6844903749660442638" target="_blank" rel="noopener noreferrer">AST in JS<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/acornjs/acorn" target="_blank" rel="noopener noreferrer">GitHub-AST生成器<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ol></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/4/2022, 5:57:03 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/blogs/project/lerna.html" class="prev">
+            搭建多模块仓库
+          </a></span> <span class="next"><a href="/blogs/project/babel.html">
+            bable
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-92abcef6><li class="level-2" data-v-92abcef6><a href="/blogs/project/ast.html#概念" class="sidebar-link reco-side-概念" data-v-92abcef6>概念</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/ast.html#应用场景" class="sidebar-link reco-side-应用场景" data-v-92abcef6>应用场景</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/ast.html#ast生成" class="sidebar-link reco-side-ast生成" data-v-92abcef6>AST生成</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/ast.html#如何理解" class="sidebar-link reco-side-如何理解" data-v-92abcef6>如何理解?</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/ast.html#dentifier-标识符" class="sidebar-link reco-side-dentifier-标识符" data-v-92abcef6>dentifier 标识符</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/ast.html#statement-语句" class="sidebar-link reco-side-statement-语句" data-v-92abcef6>Statement 语句</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/ast.html#declaration-声明语句" class="sidebar-link reco-side-declaration-声明语句" data-v-92abcef6>Declaration 声明语句</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/ast.html#expression-表达式" class="sidebar-link reco-side-expression-表达式" data-v-92abcef6>Expression 表达式</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/ast.html#modules-es-module模块语法" class="sidebar-link reco-side-modules-es-module模块语法" data-v-92abcef6>Modules ES module模块语法</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/ast.html#program-directive" class="sidebar-link reco-side-program-directive" data-v-92abcef6>Program &amp; Directive</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/ast.html#总结" class="sidebar-link reco-side-总结" data-v-92abcef6>总结</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/ast.html#参考" class="sidebar-link reco-side-参考" data-v-92abcef6>参考</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a008c6ba data-v-a008c6ba><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a008c6ba><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a008c6ba></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a008c6ba></path></svg></div></div></div>
+    <script src="/assets/js/app.830a5cc9.js" defer></script><script src="/assets/js/3.4d73c9a6.js" defer></script><script src="/assets/js/1.aba2294e.js" defer></script><script src="/assets/js/27.6953720f.js" defer></script>
+  </body>
+</html>

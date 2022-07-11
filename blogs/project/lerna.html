@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>搭建多模块仓库 | Maile‘s blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="May you travel in the ocean of front-end knowledge and enjoy it">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.87064c2e.css" as="style"><link rel="preload" href="/assets/js/app.830a5cc9.js" as="script"><link rel="preload" href="/assets/js/3.4d73c9a6.js" as="script"><link rel="preload" href="/assets/js/1.aba2294e.js" as="script"><link rel="preload" href="/assets/js/53.051a216d.js" as="script"><link rel="prefetch" href="/assets/js/10.5dddf6ba.js"><link rel="prefetch" href="/assets/js/11.34b79eaa.js"><link rel="prefetch" href="/assets/js/12.051a4c3d.js"><link rel="prefetch" href="/assets/js/13.43919eb1.js"><link rel="prefetch" href="/assets/js/14.4e2321a1.js"><link rel="prefetch" href="/assets/js/15.fac6a8ec.js"><link rel="prefetch" href="/assets/js/16.16de832a.js"><link rel="prefetch" href="/assets/js/17.c4efcbbf.js"><link rel="prefetch" href="/assets/js/18.c7744701.js"><link rel="prefetch" href="/assets/js/19.c2421190.js"><link rel="prefetch" href="/assets/js/20.653f0317.js"><link rel="prefetch" href="/assets/js/21.c3de642c.js"><link rel="prefetch" href="/assets/js/22.72723c62.js"><link rel="prefetch" href="/assets/js/23.17a5309d.js"><link rel="prefetch" href="/assets/js/24.ddcee5ef.js"><link rel="prefetch" href="/assets/js/25.190feede.js"><link rel="prefetch" href="/assets/js/26.13638e16.js"><link rel="prefetch" href="/assets/js/27.6953720f.js"><link rel="prefetch" href="/assets/js/28.02f96b1c.js"><link rel="prefetch" href="/assets/js/29.b882511f.js"><link rel="prefetch" href="/assets/js/30.7a0a3da3.js"><link rel="prefetch" href="/assets/js/31.ea2bcad4.js"><link rel="prefetch" href="/assets/js/32.f8b64b5b.js"><link rel="prefetch" href="/assets/js/33.fb8444b8.js"><link rel="prefetch" href="/assets/js/34.a278ac83.js"><link rel="prefetch" href="/assets/js/35.763b5380.js"><link rel="prefetch" href="/assets/js/36.41d6f92f.js"><link rel="prefetch" href="/assets/js/37.936e06f6.js"><link rel="prefetch" href="/assets/js/38.83c04b06.js"><link rel="prefetch" href="/assets/js/39.379243ed.js"><link rel="prefetch" href="/assets/js/4.9550ba6d.js"><link rel="prefetch" href="/assets/js/40.b0a3dcf2.js"><link rel="prefetch" href="/assets/js/41.a19d7589.js"><link rel="prefetch" href="/assets/js/42.9596539e.js"><link rel="prefetch" href="/assets/js/43.b1794abe.js"><link rel="prefetch" href="/assets/js/44.fdbe31f2.js"><link rel="prefetch" href="/assets/js/45.2a432228.js"><link rel="prefetch" href="/assets/js/46.7421816b.js"><link rel="prefetch" href="/assets/js/47.2302f343.js"><link rel="prefetch" href="/assets/js/48.0239c8ab.js"><link rel="prefetch" href="/assets/js/49.ba5f7567.js"><link rel="prefetch" href="/assets/js/5.69148c59.js"><link rel="prefetch" href="/assets/js/50.95ba92cf.js"><link rel="prefetch" href="/assets/js/51.9ae7a74a.js"><link rel="prefetch" href="/assets/js/52.afa6c340.js"><link rel="prefetch" href="/assets/js/54.5cf69d9d.js"><link rel="prefetch" href="/assets/js/55.ba77c95e.js"><link rel="prefetch" href="/assets/js/56.ebd0963d.js"><link rel="prefetch" href="/assets/js/57.7eadbc21.js"><link rel="prefetch" href="/assets/js/58.e9077c7c.js"><link rel="prefetch" href="/assets/js/59.690a513a.js"><link rel="prefetch" href="/assets/js/6.178f2e42.js"><link rel="prefetch" href="/assets/js/60.84ac0940.js"><link rel="prefetch" href="/assets/js/61.b4a3286a.js"><link rel="prefetch" href="/assets/js/62.794758f0.js"><link rel="prefetch" href="/assets/js/63.f1f7aa75.js"><link rel="prefetch" href="/assets/js/64.b8950eb0.js"><link rel="prefetch" href="/assets/js/65.c16e8e56.js"><link rel="prefetch" href="/assets/js/66.8974ef02.js"><link rel="prefetch" href="/assets/js/67.349a9d39.js"><link rel="prefetch" href="/assets/js/68.6411df5b.js"><link rel="prefetch" href="/assets/js/69.b23d05ef.js"><link rel="prefetch" href="/assets/js/7.67acb6d9.js"><link rel="prefetch" href="/assets/js/70.4209b515.js"><link rel="prefetch" href="/assets/js/71.e273d3fc.js"><link rel="prefetch" href="/assets/js/72.394df3e6.js"><link rel="prefetch" href="/assets/js/73.f27bb8d2.js"><link rel="prefetch" href="/assets/js/74.41d8bca0.js"><link rel="prefetch" href="/assets/js/75.8ca81b38.js"><link rel="prefetch" href="/assets/js/76.af20e2bb.js"><link rel="prefetch" href="/assets/js/77.69d77975.js"><link rel="prefetch" href="/assets/js/78.bdb9d409.js"><link rel="prefetch" href="/assets/js/79.97081011.js"><link rel="prefetch" href="/assets/js/8.b2f3c57d.js"><link rel="prefetch" href="/assets/js/80.e179847d.js"><link rel="prefetch" href="/assets/js/81.8c8507da.js"><link rel="prefetch" href="/assets/js/82.c9b7f1ad.js"><link rel="prefetch" href="/assets/js/9.64b61bd3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.87064c2e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-999d3bb4><div data-v-999d3bb4><div id="loader-wrapper" class="loading-wrapper" data-v-2c578df8 data-v-999d3bb4 data-v-999d3bb4><div class="loader-main" data-v-2c578df8><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-067bd032 data-v-999d3bb4 data-v-999d3bb4><h3 class="title" data-v-067bd032 data-v-067bd032>Maile‘s blog</h3> <p class="description" data-v-067bd032 data-v-067bd032>May you travel in the ocean of front-end knowledge and enjoy it</p> <label id="box" class="inputBox" data-v-067bd032 data-v-067bd032><input type="password" value="" data-v-067bd032> <span data-v-067bd032>Konck! Knock!</span> <button data-v-067bd032>OK</button></label> <div class="footer" data-v-067bd032 data-v-067bd032><span data-v-067bd032><i class="iconfont reco-theme" data-v-067bd032></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-067bd032>vuePress-theme-reco</a></span> <span data-v-067bd032><i class="iconfont reco-copyright" data-v-067bd032></i> <a data-v-067bd032><span data-v-067bd032>maile</span>
+            
+          <span data-v-067bd032>2017 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-999d3bb4><header class="navbar" data-v-999d3bb4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Maile‘s blog" class="logo"> <span class="site-name">Maile‘s blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/js/constant.html" class="nav-link"><i class="undefined"></i>
+  变量
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/constructor.html" class="nav-link"><i class="undefined"></i>
+  构造函数&amp;继承
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/es6.html" class="nav-link"><i class="undefined"></i>
+  es6基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/generator.html" class="nav-link"><i class="undefined"></i>
+  Generator函数原理
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/promise.html" class="nav-link"><i class="undefined"></i>
+  Promsie相关
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/this.html" class="nav-link"><i class="undefined"></i>
+  作用域 &amp; this
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/obj.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象模型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/event.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象事件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/request.html" class="nav-link"><i class="undefined"></i>
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/history.html" class="nav-link"><i class="undefined"></i>
+  浏览器历史记录
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/broswer.html" class="nav-link"><i class="undefined"></i>
+  浏览器渲染原理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      TS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/ts/prepare.html" class="nav-link"><i class="undefined"></i>
+  准备
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/base.html" class="nav-link"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/inner.html" class="nav-link"><i class="undefined"></i>
+  内置类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/high.html" class="nav-link"><i class="undefined"></i>
+  高级
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/class.html" class="nav-link"><i class="undefined"></i>
+  class
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/function.html" class="nav-link"><i class="undefined"></i>
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/enum.html" class="nav-link"><i class="undefined"></i>
+  枚举
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/declare.html" class="nav-link"><i class="undefined"></i>
+  声明
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interface.html" class="nav-link"><i class="undefined"></i>
+  接口
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/configs.html" class="nav-link"><i class="undefined"></i>
+  项目配置
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/other.html" class="nav-link"><i class="undefined"></i>
+  其它
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interview.html" class="nav-link"><i class="undefined"></i>
+  面试相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/project/module.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/web-components.html" class="nav-link"><i class="undefined"></i>
+  web-components
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/microFrontends.html" class="nav-link"><i class="undefined"></i>
+  microFrontends
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/lerna.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  多模块仓库
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/ast.html" class="nav-link"><i class="undefined"></i>
+  AST
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/babel.html" class="nav-link"><i class="undefined"></i>
+  Babel
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      react
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/react/react-base.html" class="nav-link"><i class="undefined"></i>
+  react基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/react-super.html" class="nav-link"><i class="undefined"></i>
+  react进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-hooks.html" class="nav-link"><i class="undefined"></i>
+  react-hooks
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-vdom.html" class="nav-link"><i class="undefined"></i>
+  react虚拟Dom
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-diff.html" class="nav-link"><i class="undefined"></i>
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-fiber.html" class="nav-link"><i class="undefined"></i>
+  react-fiber
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-comp.html" class="nav-link"><i class="undefined"></i>
+  react-comp
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/redux.html" class="nav-link"><i class="undefined"></i>
+  redux
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-redux.html" class="nav-link"><i class="undefined"></i>
+  react-redux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/vue/base.html" class="nav-link"><i class="undefined"></i>
+  vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/super.html" class="nav-link"><i class="undefined"></i>
+  vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-cli.html" class="nav-link"><i class="undefined"></i>
+  vue-cli源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router-base.html" class="nav-link"><i class="undefined"></i>
+  vue-router基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-ssr.html" class="nav-link"><i class="undefined"></i>
+  vue-ssr
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue2-source.html" class="nav-link"><i class="undefined"></i>
+  vue2.x
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue3-source.html" class="nav-link"><i class="undefined"></i>
+  vue3.x源码
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/node/command.html" class="nav-link"><i class="undefined"></i>
+  命令行工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/base.html" class="nav-link"><i class="undefined"></i>
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/event.html" class="nav-link"><i class="undefined"></i>
+  事件循环
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/koa.html" class="nav-link"><i class="undefined"></i>
+  koa源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/protocol.html" class="nav-link"><i class="undefined"></i>
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/node-decorators.html" class="nav-link"><i class="undefined"></i>
+  装饰器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其它
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/other/performance1.html" class="nav-link"><i class="undefined"></i>
+  性能优化一
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/mini-app.html" class="nav-link"><i class="undefined"></i>
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/canvas.html" class="nav-link"><i class="undefined"></i>
+  Canvas
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/artadmire" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-999d3bb4></div> <aside class="sidebar" data-v-999d3bb4><div class="personal-info-wrapper" data-v-e2878dae data-v-999d3bb4><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-e2878dae> <h3 class="name" data-v-e2878dae>
+    maile
+  </h3> <div class="num" data-v-e2878dae><div data-v-e2878dae><h3 data-v-e2878dae>68</h3> <h6 data-v-e2878dae>Articles</h6></div> <div data-v-e2878dae><h3 data-v-e2878dae>0</h3> <h6 data-v-e2878dae>Tags</h6></div></div> <ul class="social-links" data-v-e2878dae></ul> <hr data-v-e2878dae></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/js/constant.html" class="nav-link"><i class="undefined"></i>
+  变量
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/constructor.html" class="nav-link"><i class="undefined"></i>
+  构造函数&amp;继承
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/es6.html" class="nav-link"><i class="undefined"></i>
+  es6基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/generator.html" class="nav-link"><i class="undefined"></i>
+  Generator函数原理
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/promise.html" class="nav-link"><i class="undefined"></i>
+  Promsie相关
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/this.html" class="nav-link"><i class="undefined"></i>
+  作用域 &amp; this
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/obj.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象模型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/event.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象事件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/request.html" class="nav-link"><i class="undefined"></i>
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/history.html" class="nav-link"><i class="undefined"></i>
+  浏览器历史记录
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/broswer.html" class="nav-link"><i class="undefined"></i>
+  浏览器渲染原理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      TS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/ts/prepare.html" class="nav-link"><i class="undefined"></i>
+  准备
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/base.html" class="nav-link"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/inner.html" class="nav-link"><i class="undefined"></i>
+  内置类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/high.html" class="nav-link"><i class="undefined"></i>
+  高级
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/class.html" class="nav-link"><i class="undefined"></i>
+  class
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/function.html" class="nav-link"><i class="undefined"></i>
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/enum.html" class="nav-link"><i class="undefined"></i>
+  枚举
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/declare.html" class="nav-link"><i class="undefined"></i>
+  声明
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interface.html" class="nav-link"><i class="undefined"></i>
+  接口
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/configs.html" class="nav-link"><i class="undefined"></i>
+  项目配置
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/other.html" class="nav-link"><i class="undefined"></i>
+  其它
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interview.html" class="nav-link"><i class="undefined"></i>
+  面试相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/project/module.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/web-components.html" class="nav-link"><i class="undefined"></i>
+  web-components
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/microFrontends.html" class="nav-link"><i class="undefined"></i>
+  microFrontends
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/lerna.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  多模块仓库
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/ast.html" class="nav-link"><i class="undefined"></i>
+  AST
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/babel.html" class="nav-link"><i class="undefined"></i>
+  Babel
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      react
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/react/react-base.html" class="nav-link"><i class="undefined"></i>
+  react基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/react-super.html" class="nav-link"><i class="undefined"></i>
+  react进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-hooks.html" class="nav-link"><i class="undefined"></i>
+  react-hooks
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-vdom.html" class="nav-link"><i class="undefined"></i>
+  react虚拟Dom
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-diff.html" class="nav-link"><i class="undefined"></i>
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-fiber.html" class="nav-link"><i class="undefined"></i>
+  react-fiber
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-comp.html" class="nav-link"><i class="undefined"></i>
+  react-comp
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/redux.html" class="nav-link"><i class="undefined"></i>
+  redux
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-redux.html" class="nav-link"><i class="undefined"></i>
+  react-redux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/vue/base.html" class="nav-link"><i class="undefined"></i>
+  vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/super.html" class="nav-link"><i class="undefined"></i>
+  vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-cli.html" class="nav-link"><i class="undefined"></i>
+  vue-cli源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router-base.html" class="nav-link"><i class="undefined"></i>
+  vue-router基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-ssr.html" class="nav-link"><i class="undefined"></i>
+  vue-ssr
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue2-source.html" class="nav-link"><i class="undefined"></i>
+  vue2.x
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue3-source.html" class="nav-link"><i class="undefined"></i>
+  vue3.x源码
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/node/command.html" class="nav-link"><i class="undefined"></i>
+  命令行工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/base.html" class="nav-link"><i class="undefined"></i>
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/event.html" class="nav-link"><i class="undefined"></i>
+  事件循环
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/koa.html" class="nav-link"><i class="undefined"></i>
+  koa源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/protocol.html" class="nav-link"><i class="undefined"></i>
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/node-decorators.html" class="nav-link"><i class="undefined"></i>
+  装饰器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其它
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/other/performance1.html" class="nav-link"><i class="undefined"></i>
+  性能优化一
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/mini-app.html" class="nav-link"><i class="undefined"></i>
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/canvas.html" class="nav-link"><i class="undefined"></i>
+  Canvas
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/artadmire" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span></span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/project/module.html" class="sidebar-link">模块化</a></li><li><a href="/blogs/project/web-components.html" class="sidebar-link">Web Components</a></li><li><a href="/blogs/project/microFrontends.html" class="sidebar-link">微前端</a></li><li><a href="/blogs/project/lerna.html" aria-current="page" class="active sidebar-link">搭建多模块仓库</a></li><li><a href="/blogs/project/ast.html" class="sidebar-link">AST</a></li><li><a href="/blogs/project/babel.html" class="sidebar-link">bable</a></li><li><a href="/blogs/project/webpack.html" class="sidebar-link">webapck</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-067bd032 data-v-999d3bb4><h3 class="title" data-v-067bd032 data-v-067bd032></h3> <!----> <label id="box" class="inputBox" data-v-067bd032 data-v-067bd032><input type="password" value="" data-v-067bd032> <span data-v-067bd032>Konck! Knock!</span> <button data-v-067bd032>OK</button></label> <div class="footer" data-v-067bd032 data-v-067bd032><span data-v-067bd032><i class="iconfont reco-theme" data-v-067bd032></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-067bd032>vuePress-theme-reco</a></span> <span data-v-067bd032><i class="iconfont reco-copyright" data-v-067bd032></i> <a data-v-067bd032><span data-v-067bd032>maile</span>
+            
+          <span data-v-067bd032>2017 - </span>
+          2022
+        </a></span></div></div> <div data-v-999d3bb4><main class="page"><section><div class="page-title"><h1 class="title">搭建多模块仓库</h1> <div data-v-10e19382><i class="iconfont reco-account" data-v-10e19382><span data-v-10e19382>maile</span></i> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h1 id="搭建多模块仓库"><a href="#搭建多模块仓库" class="header-anchor">#</a> 搭建多模块仓库</h1> <h2 id="multirepo-vs-monorepo"><a href="#multirepo-vs-monorepo" class="header-anchor">#</a> multirepo VS monorepo</h2> <p>什么是 multirepo ？什么是 monorepo ？</p> <p><strong>multirepo</strong></p> <p>一个仓库内只有一个项目，以一个npm包发布，适用于基础组件库。</p> <p>multirepo 可以让每个团队都拥有自己的仓库，他们可以使用自己的构建流程、代码规范等，但是同时也会存在很多问题，比如模块之间如果存在相互依赖，就必须到目标仓库里进行bug修复、构建、发版本等，相互依赖关系越复杂，处理起来就越困难。</p> <p><strong>monorepo</strong></p> <p>monorepo 可以让多个项目共享同一个仓库，因此他们可以共享同一套构建流程、代码规范也可以做到统一，特别是如果存在模块间的相互依赖的情况，查看代码、修改bug、调试等会更加方便，因此也越来越受到大家的关注，像 Babel、React、Vue 等主流的开源仓库都采用的 monorepo。</p> <h2 id="什么是lerna"><a href="#什么是lerna" class="header-anchor">#</a> 什么是lerna?</h2> <p>Lerna 是一个管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。</p> <h2 id="lerna解决了什么问题"><a href="#lerna解决了什么问题" class="header-anchor">#</a> lerna解决了什么问题？</h2> <p>总结一下，使用 lerna 可以帮我们解决如下几个痛点:</p> <ul><li>多个仓库之间可以管理管理公共的依赖包，或者单独管理各自的依赖包。</li> <li>方便模块之间的相互引用，模块之间的调试不必发版本，lerna内部会自动进行link。</li> <li>lerna提供了两种模式，支持选择单独针对某个包发版本或者统一发版本。</li> <li>多个仓库之间可以共享统一的代码规范，版本管理更加规范。</li></ul> <h2 id="基本用法"><a href="#基本用法" class="header-anchor">#</a> 基本用法</h2> <h3 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">npm</span> <span class="token function">install</span> --global lerna
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="创建一个git仓库"><a href="#创建一个git仓库" class="header-anchor">#</a> 创建一个git仓库</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">git</span> init lerna-repo <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> lerna-repo
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="初始化一个-lerna-仓库"><a href="#初始化一个-lerna-仓库" class="header-anchor">#</a> 初始化一个 lerna 仓库</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ lerna init
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>注意，lerna init 可以通过参数 --independent 进入 Independent 模式，该模式可以单独发版本。</p></blockquote> <p>初始化之后的工程目录结构如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>lerna-repo
+    ├── lerna.json
+    ├── package.json
+    └── packages
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="新增package包"><a href="#新增package包" class="header-anchor">#</a> 新增package包</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ lerna create pkg1
+$ lerna create pkg2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>创建完成后的目录结构如下:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>lerna-demo
+    ├── README.md
+    ├── lerna.json
+    ├── package.json
+    └── packages
+        ├── pkg1
+        │   ├── README.md
+        │   ├── __tests__
+        │   ├── lib
+        │   └── package.json
+        └── pkg2
+            ├── README.md
+            ├── __tests__
+            ├── lib
+            └── package.json
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="添加依赖"><a href="#添加依赖" class="header-anchor">#</a> 添加依赖</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>lerna <span class="token function">add</span> fs-extra
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这种方式添加的依赖，会加在每个包自己的node_modules中，</p> <h3 id="添加单独的依赖"><a href="#添加单独的依赖" class="header-anchor">#</a> 添加单独的依赖</h3> <p>比如给 pkg1 安装一个 glob 包，给 pkg2 安装一个 ora 包:</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ lerna <span class="token function">add</span> glob --scope pkg1
+$ lerna <span class="token function">add</span> ora --scope pkg2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>其中 --scope 参数用来指定具体给哪个 package 安装包，注意 --scope 后面的参数是对应模块的 package.json 中的 name 字段名。</p> <h3 id="添加内部模块之间的依赖"><a href="#添加内部模块之间的依赖" class="header-anchor">#</a> 添加内部模块之间的依赖</h3> <p>将 pkg1 作为 pkg2 的依赖进行安装：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ lerna <span class="token function">add</span> pkg1 --scope pkg2
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>需要注意的是，通过这种方式安装的依赖，并不会将 pkg1 安装到 pkg2 的 node_modules 里，而是通过 symlink 的形式进行关联。</p> <p>pkg2中可以直接引入pkg1。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> pkg1 <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'pkg1'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> pkg2<span class="token punctuation">;</span>
+
+<span class="token function">pkg1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">pkg2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// TODO</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="发布"><a href="#发布" class="header-anchor">#</a> 发布</h3> <p>以上包确认没有问题之后，就可以通过执行 lerna publish 进行发布了。</p> <p>在进行 publish 之前需要首先提交你的代码，否则 lerna 会报错：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>lerna <span class="token constant">ERR</span><span class="token operator">!</span> <span class="token constant">ENOCOMMIT</span> No commits <span class="token keyword">in</span> <span class="token keyword">this</span> repository<span class="token punctuation">.</span> Please commit something before using version<span class="token punctuation">.</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>提交代码并关联到 git 仓库：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+$ <span class="token function">git</span> commit -m <span class="token string">'init'</span>
+$ <span class="token function">git</span> remote <span class="token function">add</span> origin git@github.com:astonishqft/lerna-demo.git // 关联到远程git仓库
+$ <span class="token function">git</span> push -u origin main
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>Lerna 不会发布在 package.json 中将 private 属性设置为 true 的模块。</p> <h3 id="删除某个包"><a href="#删除某个包" class="header-anchor">#</a> 删除某个包</h3> <p>将 pkg1 里面的 glob 包删除：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ lerna <span class="token builtin class-name">exec</span> --scope<span class="token operator">=</span>pkg1 <span class="token function">npm</span> uninstall glob
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="查看模块"><a href="#查看模块" class="header-anchor">#</a> 查看模块</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>lerna list // 查看包
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="抽离公共的包"><a href="#抽离公共的包" class="header-anchor">#</a> 抽离公共的包</h3> <p>上面可以看到，pkg1 和 pkg2 都依赖了 fs-extra 这个包，而各自 package 下面的 node_modules 都进行了一次安装，因此我们可以通过 --hoist 来抽取重复的依赖到最外层的 node_modules 目录下，同时最外层的 package.josn 的依赖信息也不会进行更新。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ lerna bootstrap --hoist
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>但是这种方式会有一个问题，不同版本号只会保留使用最多的版本，这种配置不太好，当项目中有些功能需要依赖老版本时，就会出现问题，因此这种方式不推荐使用。</p> <h2 id="yarn管理"><a href="#yarn管理" class="header-anchor">#</a> yarn管理</h2> <p>前面我们已经介绍了 lerna 的相关概念和基本用法，但是lerna存在一些问题，比如公共依赖提取的问题。目前最常见的解决方案是基于 lerna 和 yarn workspace 的 monorepo 工作流。</p> <p>用 yarn 来处理依赖问题，用 lerna 来处理发布问题。</p> <h3 id="yarn-workspaces-与-lerna"><a href="#yarn-workspaces-与-lerna" class="header-anchor">#</a> yarn workspaces 与 lerna</h3> <p>yarn workspaces 是 yarn 提供的 monorepo 的依赖管理机制，用于在代码仓库的根目录下管理多个 package 依赖，与 lerna 不同的是，yarn workspaces 可以解决前面说的当不同的 package 依赖不同的版本号问题，yarn workspaces 会检查每个子项目里面依赖及其版本，如果版本不一致都会安装到各自 package 的 node_modules 中，只有依赖版本号一致的时候才会提升到顶层，而 lerna 会进到每个 package 中执行 yarn/npm install，因此会在每个 package 下生成一个 node_modules。</p> <p>arn workspaces 首先在工程的根目录下的 package.json 中增加 &quot;private&quot;: true 和 &quot;workspaces”: [ &quot;packages/*&quot;] 配置项。&quot;private&quot;: true 可以确保根目录不会被发布出去，<code>&quot;workspaces”: [ &quot;packages/*&quot;]</code> 声明了 workspaces 中所包含的项目路径。</p> <h3 id="初始化"><a href="#初始化" class="header-anchor">#</a> 初始化</h3> <p>对于一个已经存在的 monorepo 仓库，使用 yarn install 安装依赖。yarn install 会自动安装依赖并且解决同一个仓库之间多个package 之间的 link 问题。</p> <p>yarn install 等价于 lerna bootstrap --npm-client yarn --use-workspace。</p> <h3 id="清理依赖"><a href="#清理依赖" class="header-anchor">#</a> 清理依赖</h3> <p>使用 lerna clean 可以清理每个 package 下的 node_modules，但是没有办法清理根目录下的 node_modules 目录，因此,我们可以在根目录下的 package.json 目录的 scripts 中增加一条 clean 命令，用于清理环境。</p> <p>package.json:</p> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;clear-all&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rimraf node_modules &amp;&amp; lerna clean -y&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="安装依赖"><a href="#安装依赖" class="header-anchor">#</a> 安装依赖</h3> <p>安装依赖一般分为三种情况：</p> <ul><li>安装到workspace-root</li></ul> <p>对于一些打包工具或者代码规范校验工具，可以使用 yarn -W add [package] [--dev] 进行安装，比如 typescript、eslint、cross-env、babel、rollup等。这类包一般都是一些开发依赖，比如将 ts 代码转换成 es5 代码或者一些代码校验工具等。通过这种方式安装的依赖包是装在根目录下的 node_modules 中。</p> <ul><li>给所有的 package 都安装依赖</li></ul> <p>比如如果想给每个 package 都安装一个 lodash 包，就可以使用 yarn workspace add lodash 给每个 package 都安装 lodash。</p> <ul><li>给指定的某个 package 安装依赖</li></ul> <p>通过 yarn workspace pkgA add pkgB 可以将 pkgB 作为依赖安装到 pkgA 中，需要注意的是，如果是 packages 之间的相互安装，安装的时候可以指定到具体的版本号，否则安装的时候会去npm上搜索，但是因为某个包还没有发包出去，导致安装失败。</p> <p>删除包的时候只需要把上述 add 换成 remove 即可。</p> <h3 id="运行workspace的command"><a href="#运行workspace的command" class="header-anchor">#</a> 运行workspace的command</h3> <p>通过运行 yarn workspace <code>&lt;workspace_name&gt; &lt;command&gt;</code> 命令运行某个执行 package 下的某个 script 命令。</p> <p>比如执行 pkgA 下的 build 命令，可以运行 yarn workspace pkgA run build。如果想运行 package 下的 build 命令，可以运行 yarn workspaces run build。</p> <h3 id="代码提交"><a href="#代码提交" class="header-anchor">#</a> 代码提交</h3> <p>代码编写完毕后接下来就涉及到代码的提交，为了规范代码提交格式，方便自动生成 changelog，这里需要借助以下几个工具。</p> <h4 id="commitizen-cz-conventional-changelog"><a href="#commitizen-cz-conventional-changelog" class="header-anchor">#</a> commitizen &amp;&amp; cz-conventional-changelog</h4> <p>commitizen 的作用主要是为了生成标准化的 commit message，符合 Angular规范。</p> <p>一个标准化的 commit message 应该包含三个部分：Header、Body 和 Footer，其中的 Header 是必须的，Body 和 Footer 可以选填。</p> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">&gt;</span></span>(<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>): <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>subject</span><span class="token punctuation">&gt;</span></span>
+// 空一行
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+// 空一行
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>Header 部分由三个字段组成：type（必需）、scope（可选）、subject（必需）</p> <p><strong>Header</strong></p> <ol><li>type</li></ol> <ul><li><p>type 必须是下面的其中之一：</p></li> <li><p>feat: 增加新功能</p></li> <li><p>fix: 修复 bug</p></li> <li><p>docs: 只改动了文档相关的内容</p></li> <li><p>style: 不影响代码含义的改动，例如去掉空格、改变缩进、增删分号</p></li> <li><p>refactor: 代码重构时使用，既不是新增功能也不是代码的bud修复</p></li> <li><p>perf: 提高性能的修改</p></li> <li><p>test: 添加或修改测试代码</p></li> <li><p>build: 构建工具或者外部依赖包的修改，比如更新依赖包的版本</p></li> <li><p>ci: 持续集成的配置文件或者脚本的修改</p></li> <li><p>chore: 杂项，其他不需要修改源代码或不需要修改测试代码的修改</p></li> <li><p>revert: 撤销某次提交</p></li></ul> <ol start="2"><li>scope</li></ol> <p>用于说明本次提交的影响范围。scope 依据项目而定，例如在业务项目中可以依据菜单或者功能模块划分，如果是组件库开发，则可以依据组件划分。</p> <ol start="3"><li>subject</li></ol> <p>主题包含对更改的简洁描述，注意三点：</p> <ul><li><p>使用祈使语气，现在时，比如使用 &quot;change&quot; 而不是 &quot;changed&quot; 或者 ”changes“</p></li> <li><p>第一个字母不要大写</p></li> <li><p>末尾不要以.结尾</p></li></ul> <p><strong>Body</strong></p> <p>主要包含对主题的进一步描述，同样的，应该使用祈使语气，包含本次修改的动机并将其与之前的行为进行对比。</p> <p><strong>Footer</strong></p> <p>包含此次提交有关重大更改的信息，引用此次提交关闭的issue地址，如果代码的提交是不兼容变更或关闭缺陷，则Footer必需，否则可以省略。</p> <p>使用方法：</p> <p>装 commitizen，如果需要在项目中使用 commitizen 生成符合 AngularJS 规范的提交说明，还需要安装 cz-conventional-changelog 适配器：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">yarn</span> -W <span class="token function">add</span> commitizen cz-conventional-changelog -D
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>package.json 中增加一条 script: commit: &quot;git-cz&quot;，并且在 config
+字段中指定 cz-conventional-changelog 路径：</p> <div class="language-json line-numbers-mode"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;commit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;git-cz&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;config&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;commitizen&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;path&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cz-conventional-changelog&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>接下来就可以使用 yarn commit 来代替 git commit 进行代码提交了。</p> <h4 id="commitlint-husky"><a href="#commitlint-husky" class="header-anchor">#</a> commitlint &amp;&amp; husky</h4> <p>前面我们提到，通过 commitizen &amp;&amp; cz-conventional-changelog 可以规范我们的 commit message，但是同时也存在一个问题，如果用户不通过 yarn commit 来提交代码，而是直接通过 git commit 命令来提交代码，就能绕开 commit message 检查，这是我们不希望看到的。</p> <p>因此接下来我们使用 commitlint 结合 husky 来对我们的提交行为进行约束。在 git commit 提交之前使用 git 钩子来验证信息。提交不符合规则的信息将会被阻止提交。</p> <p>安装 commitlint 和 husky：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">yarn</span> -W <span class="token function">add</span> @commitlint/cli @commitlint/config-conventional husky -D
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 在工程根目录下增加 commitlint.config.js 配置文件，指定 commitlint 的校验配置文件：</span>
+
+<span class="token comment">// commitlint.config.js:</span>
+
+<span class="token comment">// 已经废弃的配置：</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@commitlint/config-conventional'</span><span class="token punctuation">]</span> 
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 需要注意的是，如果安装的 husky 的版本是 7.x 的，以往直接在 package.json 中 hooks 字段增加的配置项已经被废弃了。</span>
+
+<span class="token comment">// 已废弃的配置：</span>
+
+
+<span class="token string-property property">&quot;husky&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
+  <span class="token string-property property">&quot;hooks&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
+    <span class="token string-property property">&quot;commit-msg&quot;</span><span class="token operator">:</span> <span class="token string">&quot;commitlint -E HUSKY_GIT_PARAMS&quot;</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>下面在 husky 7.x 版本下进行 commit-msg 的配置。</p> <ol><li>执行 yarn husky install</li></ol> <p>或者如果想在安装后自动启动 husky，在 package.json 的scripts中增加一条script命令：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token string-property property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;prepare&quot;</span><span class="token operator">:</span> <span class="token string">&quot;husky install&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>prepare 是 NPM 操作生命周期中的一环，在执行 install 的时候会按生命周期顺序执行相应钩子：preinstall -&gt; install -&gt; postinstall -&gt; prepublish -&gt; preprepare -&gt; prepare -&gt; postprepare</p> <p>执行 yarn prepare 或者 yarn install 完毕后就会在根目录下创建一个 .husky 目录。</p> <ol start="2"><li>通过 husky add[cmd] 指令来添加一条 hook</li></ol> <p>执行 npx husky add .husky/commit-msg 'npx --no-install commitlint --edit &quot;$1&quot;' 会在 .husky 下生成一个 commit-msg 的 shell 文件：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>    
+#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>sh
+<span class="token punctuation">.</span> <span class="token string">&quot;$(dirname &quot;</span>$0<span class="token string">&quot;)/_/husky.sh&quot;</span>
+
+npx <span class="token operator">--</span>no<span class="token operator">-</span>install commitlint <span class="token operator">--</span>edit $1
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>这个时候需要配置commitlint.config.js</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@commitlint/config-conventional'</span><span class="token punctuation">]</span> 
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>这样，当我们在执行 git commit -m 'xxx' 的时候，如果提交的 commit message 不符合规范就会报如下的错误，只有提交信息符合提交规范才会允许代码提交。</p> <h3 id="版本发布"><a href="#版本发布" class="header-anchor">#</a> 版本发布</h3> <p>通过上面的方式，严格 commit message 的提交规范，就可以方便的通过 lerna 完成生成 changelog、打 git tag、 更新 package.json 的 version 版本号、发布到 npm 等操作。</p> <p><strong>lerna puplish</strong></p> <p>lerna publish 的时候会做以下操作：</p> <ul><li><p>找出从上一个版本发布以来有过变更的 package</p></li> <li><p>提示开发者确定要发布的版本号</p></li> <li><p>将所有更新过的的 package 中的 package.json 的 version 字段更新</p></li> <li><p>将依赖更新过的 package 的 包中的依赖版本号更新</p></li> <li><p>更新 lerna.json 中的 version 字段</p></li> <li><p>提交上述修改，并打一个 tag</p></li> <li><p>推送到 git 仓库</p></li></ul> <p>changelog 的生成可以通过 lerna version --conventional-commits 自动生成，关于 --conventional-commits 参数，lerna 是这么描述的：</p> <p>Use conventional-changelog to determine version bump and generate CHANGELOG.</p> <p>在 lerna.json 增加如下配置：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;command&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">&quot;version&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">&quot;conventionalCommits&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>lerna version 会检测从上一个版本发布以来的变动，但有一些文件的提交，我们不希望触发版本的变动，譬如 .md 文件的修改，并没有实际引起 package 逻辑的变化，不应该触发版本的变更。可以通过 ignoreChanges 配置排除。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;ignoreChanges&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;**/*.md&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>配置好之后，通过 lerna publish 完成changelog生成、版本号的修改和npm发包等操作了</p> <h3 id="eslint配置"><a href="#eslint配置" class="header-anchor">#</a> eslint配置</h3> <p>配置 eslint 对代码进行统一的规范校验，配合 lint-staged 可以对已经提交的代码进行校验。</p> <p>安装 eslint 和 lint-stage:</p> <p>$ yarn -W add eslint lint-staged @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
+增加 .eslintrc.js 配置文件:</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">'parser'</span><span class="token operator">:</span> <span class="token string">'@typescript-eslint/parser'</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'plugins'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@typescript-eslint'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'rules'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'no-var'</span><span class="token operator">:</span> <span class="token string">'error'</span><span class="token punctuation">,</span><span class="token comment">// 不能使用var声明变量</span>
+    <span class="token string-property property">'no-extra-semi'</span><span class="token operator">:</span> <span class="token string">'error'</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'@typescript-eslint/indent'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'import/extensions'</span><span class="token operator">:</span> <span class="token string">'off'</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'linebreak-style'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token string">'windows'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'indent'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">SwitchCase</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// error类型，缩进2个空格</span>
+    <span class="token string-property property">'space-before-function-paren'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 在函数左括号的前面是否有空格</span>
+    <span class="token string-property property">'eol-last'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 不检测新文件末尾是否有空行</span>
+    <span class="token string-property property">'semi'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token string">'always'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 在语句后面加分号</span>
+    <span class="token string-property property">'quotes'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token string">'single'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token comment">// 字符串使用单双引号,double,single</span>
+    <span class="token string-property property">'no-console'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">allow</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'log'</span><span class="token punctuation">,</span> <span class="token string">'warn'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token comment">// 允许使用console.log()</span>
+    <span class="token string-property property">'arrow-parens'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'no-new'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token comment">//允许使用 new 关键字</span>
+    <span class="token string-property property">'comma-dangle'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'never'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 数组和对象键值对最后一个逗号， never参数：不能带末尾的逗号, always参数：必须带末尾的逗号，always-multiline多行模式必须带逗号，单行模式不能带逗号</span>
+    <span class="token string-property property">'no-undef'</span><span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'parserOptions'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'ecmaVersion'</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'sourceType'</span><span class="token operator">:</span> <span class="token string">'module'</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'ecmaFeatures'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">'modules'</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>package.json 中增加如下配置：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token string-property property">&quot;lint-staged&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">&quot;*.ts&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;eslint --fix&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;git add&quot;</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>husky 中增加 pre-commit 校验：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>$ npx husky <span class="token function">add</span> .husky/pre-commit <span class="token string">&quot;npx --no-install lint-staged&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="测试"><a href="#测试" class="header-anchor">#</a> 测试</h3> <p>安装jest</p> <p>yarn -W add jest -D</p> <p>将如下代码添加到 package.json 中：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">&quot;test&quot;</span><span class="token operator">:</span> <span class="token string">&quot;jest&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>新建eslint忽略文件.eslintignore：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>build
+config/*.js
+packages/**/__tests__/*.test.js
+static/dist
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>/Users/maile/study/lerna-repo/packages/pkg1/<strong>tests</strong>/pkg1.test.js:</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> pkg1 <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../lib/pkg1.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'adds 1 + 2 to equal 3'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">pkg1</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>修改pkg1：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> pkg1<span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">pkg1</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// TODO</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'pk1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>执行 yarn jest</p> <p>会执行所有的test文件，看到覆盖率。</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>以上就是一个完整的基于 lerna + yarn workspace 的 monorepo 的实践流程，里面包含了依赖包的管理、完善的工作流、统一的代码风格、一键发布机制等，当然还有一些不够完善的地方需要自己补充，比如单元测试等，有需要的可以基于我的例子进行补充完善。</p> <p><a href="https://github.com/artadmire/lerna-repo" target="_blank" rel="noopener noreferrer">GitHub<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>参考：</p> <ol><li><a href="https://juejin.cn/post/6844903606815064077" target="_blank" rel="noopener noreferrer">优雅的提交你的 Git Commit Message<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://eslint.bootcss.com/" target="_blank" rel="noopener noreferrer">ESLint<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="http://stylelint.docschina.org/" target="_blank" rel="noopener noreferrer">Stylelint<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://prettier.io/docs/en/install.html" target="_blank" rel="noopener noreferrer">Prettier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.lernajs.cn/" target="_blank" rel="noopener noreferrer">Lerna<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ol></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">6/20/2022, 5:44:36 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/blogs/project/microFrontends.html" class="prev">
+            微前端
+          </a></span> <span class="next"><a href="/blogs/project/ast.html">
+            AST
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-92abcef6><li class="level-2" data-v-92abcef6><a href="/blogs/project/lerna.html#multirepo-vs-monorepo" class="sidebar-link reco-side-multirepo-vs-monorepo" data-v-92abcef6>multirepo VS monorepo</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/lerna.html#什么是lerna" class="sidebar-link reco-side-什么是lerna" data-v-92abcef6>什么是lerna?</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/lerna.html#lerna解决了什么问题" class="sidebar-link reco-side-lerna解决了什么问题" data-v-92abcef6>lerna解决了什么问题？</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/lerna.html#基本用法" class="sidebar-link reco-side-基本用法" data-v-92abcef6>基本用法</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#安装" class="sidebar-link reco-side-安装" data-v-92abcef6>安装</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#创建一个git仓库" class="sidebar-link reco-side-创建一个git仓库" data-v-92abcef6>创建一个git仓库</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#初始化一个-lerna-仓库" class="sidebar-link reco-side-初始化一个-lerna-仓库" data-v-92abcef6>初始化一个 lerna 仓库</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#新增package包" class="sidebar-link reco-side-新增package包" data-v-92abcef6>新增package包</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#添加依赖" class="sidebar-link reco-side-添加依赖" data-v-92abcef6>添加依赖</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#添加单独的依赖" class="sidebar-link reco-side-添加单独的依赖" data-v-92abcef6>添加单独的依赖</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#添加内部模块之间的依赖" class="sidebar-link reco-side-添加内部模块之间的依赖" data-v-92abcef6>添加内部模块之间的依赖</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#发布" class="sidebar-link reco-side-发布" data-v-92abcef6>发布</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#删除某个包" class="sidebar-link reco-side-删除某个包" data-v-92abcef6>删除某个包</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#查看模块" class="sidebar-link reco-side-查看模块" data-v-92abcef6>查看模块</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#抽离公共的包" class="sidebar-link reco-side-抽离公共的包" data-v-92abcef6>抽离公共的包</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/lerna.html#yarn管理" class="sidebar-link reco-side-yarn管理" data-v-92abcef6>yarn管理</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#yarn-workspaces-与-lerna" class="sidebar-link reco-side-yarn-workspaces-与-lerna" data-v-92abcef6>yarn workspaces 与 lerna</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#初始化" class="sidebar-link reco-side-初始化" data-v-92abcef6>初始化</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#清理依赖" class="sidebar-link reco-side-清理依赖" data-v-92abcef6>清理依赖</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#安装依赖" class="sidebar-link reco-side-安装依赖" data-v-92abcef6>安装依赖</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#运行workspace的command" class="sidebar-link reco-side-运行workspace的command" data-v-92abcef6>运行workspace的command</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#代码提交" class="sidebar-link reco-side-代码提交" data-v-92abcef6>代码提交</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#版本发布" class="sidebar-link reco-side-版本发布" data-v-92abcef6>版本发布</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#eslint配置" class="sidebar-link reco-side-eslint配置" data-v-92abcef6>eslint配置</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/project/lerna.html#测试" class="sidebar-link reco-side-测试" data-v-92abcef6>测试</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/project/lerna.html#总结" class="sidebar-link reco-side-总结" data-v-92abcef6>总结</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a008c6ba data-v-a008c6ba><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a008c6ba><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a008c6ba></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a008c6ba></path></svg></div></div></div>
+    <script src="/assets/js/app.830a5cc9.js" defer></script><script src="/assets/js/3.4d73c9a6.js" defer></script><script src="/assets/js/1.aba2294e.js" defer></script><script src="/assets/js/53.051a216d.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浏览器的渲染原理 | Maile‘s blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="May you travel in the ocean of front-end knowledge and enjoy it">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.87064c2e.css" as="style"><link rel="preload" href="/assets/js/app.830a5cc9.js" as="script"><link rel="preload" href="/assets/js/3.4d73c9a6.js" as="script"><link rel="preload" href="/assets/js/1.aba2294e.js" as="script"><link rel="preload" href="/assets/js/12.051a4c3d.js" as="script"><link rel="prefetch" href="/assets/js/10.5dddf6ba.js"><link rel="prefetch" href="/assets/js/11.34b79eaa.js"><link rel="prefetch" href="/assets/js/13.43919eb1.js"><link rel="prefetch" href="/assets/js/14.4e2321a1.js"><link rel="prefetch" href="/assets/js/15.fac6a8ec.js"><link rel="prefetch" href="/assets/js/16.16de832a.js"><link rel="prefetch" href="/assets/js/17.c4efcbbf.js"><link rel="prefetch" href="/assets/js/18.c7744701.js"><link rel="prefetch" href="/assets/js/19.c2421190.js"><link rel="prefetch" href="/assets/js/20.653f0317.js"><link rel="prefetch" href="/assets/js/21.c3de642c.js"><link rel="prefetch" href="/assets/js/22.72723c62.js"><link rel="prefetch" href="/assets/js/23.17a5309d.js"><link rel="prefetch" href="/assets/js/24.ddcee5ef.js"><link rel="prefetch" href="/assets/js/25.190feede.js"><link rel="prefetch" href="/assets/js/26.13638e16.js"><link rel="prefetch" href="/assets/js/27.6953720f.js"><link rel="prefetch" href="/assets/js/28.02f96b1c.js"><link rel="prefetch" href="/assets/js/29.b882511f.js"><link rel="prefetch" href="/assets/js/30.7a0a3da3.js"><link rel="prefetch" href="/assets/js/31.ea2bcad4.js"><link rel="prefetch" href="/assets/js/32.f8b64b5b.js"><link rel="prefetch" href="/assets/js/33.fb8444b8.js"><link rel="prefetch" href="/assets/js/34.a278ac83.js"><link rel="prefetch" href="/assets/js/35.763b5380.js"><link rel="prefetch" href="/assets/js/36.41d6f92f.js"><link rel="prefetch" href="/assets/js/37.936e06f6.js"><link rel="prefetch" href="/assets/js/38.83c04b06.js"><link rel="prefetch" href="/assets/js/39.379243ed.js"><link rel="prefetch" href="/assets/js/4.9550ba6d.js"><link rel="prefetch" href="/assets/js/40.b0a3dcf2.js"><link rel="prefetch" href="/assets/js/41.a19d7589.js"><link rel="prefetch" href="/assets/js/42.9596539e.js"><link rel="prefetch" href="/assets/js/43.b1794abe.js"><link rel="prefetch" href="/assets/js/44.fdbe31f2.js"><link rel="prefetch" href="/assets/js/45.2a432228.js"><link rel="prefetch" href="/assets/js/46.7421816b.js"><link rel="prefetch" href="/assets/js/47.2302f343.js"><link rel="prefetch" href="/assets/js/48.0239c8ab.js"><link rel="prefetch" href="/assets/js/49.ba5f7567.js"><link rel="prefetch" href="/assets/js/5.69148c59.js"><link rel="prefetch" href="/assets/js/50.95ba92cf.js"><link rel="prefetch" href="/assets/js/51.9ae7a74a.js"><link rel="prefetch" href="/assets/js/52.afa6c340.js"><link rel="prefetch" href="/assets/js/53.051a216d.js"><link rel="prefetch" href="/assets/js/54.5cf69d9d.js"><link rel="prefetch" href="/assets/js/55.ba77c95e.js"><link rel="prefetch" href="/assets/js/56.ebd0963d.js"><link rel="prefetch" href="/assets/js/57.7eadbc21.js"><link rel="prefetch" href="/assets/js/58.e9077c7c.js"><link rel="prefetch" href="/assets/js/59.690a513a.js"><link rel="prefetch" href="/assets/js/6.178f2e42.js"><link rel="prefetch" href="/assets/js/60.84ac0940.js"><link rel="prefetch" href="/assets/js/61.b4a3286a.js"><link rel="prefetch" href="/assets/js/62.794758f0.js"><link rel="prefetch" href="/assets/js/63.f1f7aa75.js"><link rel="prefetch" href="/assets/js/64.b8950eb0.js"><link rel="prefetch" href="/assets/js/65.c16e8e56.js"><link rel="prefetch" href="/assets/js/66.8974ef02.js"><link rel="prefetch" href="/assets/js/67.349a9d39.js"><link rel="prefetch" href="/assets/js/68.6411df5b.js"><link rel="prefetch" href="/assets/js/69.b23d05ef.js"><link rel="prefetch" href="/assets/js/7.67acb6d9.js"><link rel="prefetch" href="/assets/js/70.4209b515.js"><link rel="prefetch" href="/assets/js/71.e273d3fc.js"><link rel="prefetch" href="/assets/js/72.394df3e6.js"><link rel="prefetch" href="/assets/js/73.f27bb8d2.js"><link rel="prefetch" href="/assets/js/74.41d8bca0.js"><link rel="prefetch" href="/assets/js/75.8ca81b38.js"><link rel="prefetch" href="/assets/js/76.af20e2bb.js"><link rel="prefetch" href="/assets/js/77.69d77975.js"><link rel="prefetch" href="/assets/js/78.bdb9d409.js"><link rel="prefetch" href="/assets/js/79.97081011.js"><link rel="prefetch" href="/assets/js/8.b2f3c57d.js"><link rel="prefetch" href="/assets/js/80.e179847d.js"><link rel="prefetch" href="/assets/js/81.8c8507da.js"><link rel="prefetch" href="/assets/js/82.c9b7f1ad.js"><link rel="prefetch" href="/assets/js/9.64b61bd3.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.87064c2e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-999d3bb4><div data-v-999d3bb4><div id="loader-wrapper" class="loading-wrapper" data-v-2c578df8 data-v-999d3bb4 data-v-999d3bb4><div class="loader-main" data-v-2c578df8><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-067bd032 data-v-999d3bb4 data-v-999d3bb4><h3 class="title" data-v-067bd032 data-v-067bd032>Maile‘s blog</h3> <p class="description" data-v-067bd032 data-v-067bd032>May you travel in the ocean of front-end knowledge and enjoy it</p> <label id="box" class="inputBox" data-v-067bd032 data-v-067bd032><input type="password" value="" data-v-067bd032> <span data-v-067bd032>Konck! Knock!</span> <button data-v-067bd032>OK</button></label> <div class="footer" data-v-067bd032 data-v-067bd032><span data-v-067bd032><i class="iconfont reco-theme" data-v-067bd032></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-067bd032>vuePress-theme-reco</a></span> <span data-v-067bd032><i class="iconfont reco-copyright" data-v-067bd032></i> <a data-v-067bd032><span data-v-067bd032>maile</span>
+            
+          <span data-v-067bd032>2017 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-999d3bb4><header class="navbar" data-v-999d3bb4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="Maile‘s blog" class="logo"> <span class="site-name">Maile‘s blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/js/constant.html" class="nav-link"><i class="undefined"></i>
+  变量
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/constructor.html" class="nav-link"><i class="undefined"></i>
+  构造函数&amp;继承
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/es6.html" class="nav-link"><i class="undefined"></i>
+  es6基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/generator.html" class="nav-link"><i class="undefined"></i>
+  Generator函数原理
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/promise.html" class="nav-link"><i class="undefined"></i>
+  Promsie相关
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/this.html" class="nav-link"><i class="undefined"></i>
+  作用域 &amp; this
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/obj.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象模型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/event.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象事件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/request.html" class="nav-link"><i class="undefined"></i>
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/history.html" class="nav-link"><i class="undefined"></i>
+  浏览器历史记录
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/broswer.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  浏览器渲染原理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      TS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/ts/prepare.html" class="nav-link"><i class="undefined"></i>
+  准备
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/base.html" class="nav-link"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/inner.html" class="nav-link"><i class="undefined"></i>
+  内置类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/high.html" class="nav-link"><i class="undefined"></i>
+  高级
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/class.html" class="nav-link"><i class="undefined"></i>
+  class
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/function.html" class="nav-link"><i class="undefined"></i>
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/enum.html" class="nav-link"><i class="undefined"></i>
+  枚举
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/declare.html" class="nav-link"><i class="undefined"></i>
+  声明
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interface.html" class="nav-link"><i class="undefined"></i>
+  接口
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/configs.html" class="nav-link"><i class="undefined"></i>
+  项目配置
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/other.html" class="nav-link"><i class="undefined"></i>
+  其它
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interview.html" class="nav-link"><i class="undefined"></i>
+  面试相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/project/module.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/web-components.html" class="nav-link"><i class="undefined"></i>
+  web-components
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/microFrontends.html" class="nav-link"><i class="undefined"></i>
+  microFrontends
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/lerna.html" class="nav-link"><i class="undefined"></i>
+  多模块仓库
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/ast.html" class="nav-link"><i class="undefined"></i>
+  AST
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/babel.html" class="nav-link"><i class="undefined"></i>
+  Babel
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      react
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/react/react-base.html" class="nav-link"><i class="undefined"></i>
+  react基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/react-super.html" class="nav-link"><i class="undefined"></i>
+  react进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-hooks.html" class="nav-link"><i class="undefined"></i>
+  react-hooks
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-vdom.html" class="nav-link"><i class="undefined"></i>
+  react虚拟Dom
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-diff.html" class="nav-link"><i class="undefined"></i>
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-fiber.html" class="nav-link"><i class="undefined"></i>
+  react-fiber
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-comp.html" class="nav-link"><i class="undefined"></i>
+  react-comp
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/redux.html" class="nav-link"><i class="undefined"></i>
+  redux
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-redux.html" class="nav-link"><i class="undefined"></i>
+  react-redux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/vue/base.html" class="nav-link"><i class="undefined"></i>
+  vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/super.html" class="nav-link"><i class="undefined"></i>
+  vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-cli.html" class="nav-link"><i class="undefined"></i>
+  vue-cli源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router-base.html" class="nav-link"><i class="undefined"></i>
+  vue-router基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-ssr.html" class="nav-link"><i class="undefined"></i>
+  vue-ssr
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue2-source.html" class="nav-link"><i class="undefined"></i>
+  vue2.x
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue3-source.html" class="nav-link"><i class="undefined"></i>
+  vue3.x源码
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/node/command.html" class="nav-link"><i class="undefined"></i>
+  命令行工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/base.html" class="nav-link"><i class="undefined"></i>
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/event.html" class="nav-link"><i class="undefined"></i>
+  事件循环
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/koa.html" class="nav-link"><i class="undefined"></i>
+  koa源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/protocol.html" class="nav-link"><i class="undefined"></i>
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/node-decorators.html" class="nav-link"><i class="undefined"></i>
+  装饰器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其它
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/other/performance1.html" class="nav-link"><i class="undefined"></i>
+  性能优化一
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/mini-app.html" class="nav-link"><i class="undefined"></i>
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/canvas.html" class="nav-link"><i class="undefined"></i>
+  Canvas
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/artadmire" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-999d3bb4></div> <aside class="sidebar" data-v-999d3bb4><div class="personal-info-wrapper" data-v-e2878dae data-v-999d3bb4><img src="/avatar.png" alt="author-avatar" class="personal-img" data-v-e2878dae> <h3 class="name" data-v-e2878dae>
+    maile
+  </h3> <div class="num" data-v-e2878dae><div data-v-e2878dae><h3 data-v-e2878dae>68</h3> <h6 data-v-e2878dae>Articles</h6></div> <div data-v-e2878dae><h3 data-v-e2878dae>0</h3> <h6 data-v-e2878dae>Tags</h6></div></div> <ul class="social-links" data-v-e2878dae></ul> <hr data-v-e2878dae></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      JS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/js/constant.html" class="nav-link"><i class="undefined"></i>
+  变量
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/constructor.html" class="nav-link"><i class="undefined"></i>
+  构造函数&amp;继承
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/es6.html" class="nav-link"><i class="undefined"></i>
+  es6基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/generator.html" class="nav-link"><i class="undefined"></i>
+  Generator函数原理
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/promise.html" class="nav-link"><i class="undefined"></i>
+  Promsie相关
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/js/this.html" class="nav-link"><i class="undefined"></i>
+  作用域 &amp; this
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/obj.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象模型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/event.html" class="nav-link"><i class="undefined"></i>
+  浏览器对象事件
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/request.html" class="nav-link"><i class="undefined"></i>
+  网络请求
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/history.html" class="nav-link"><i class="undefined"></i>
+  浏览器历史记录
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/network/broswer.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  浏览器渲染原理
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      TS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/ts/prepare.html" class="nav-link"><i class="undefined"></i>
+  准备
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/base.html" class="nav-link"><i class="undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/inner.html" class="nav-link"><i class="undefined"></i>
+  内置类型
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/high.html" class="nav-link"><i class="undefined"></i>
+  高级
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/class.html" class="nav-link"><i class="undefined"></i>
+  class
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/function.html" class="nav-link"><i class="undefined"></i>
+  函数
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/enum.html" class="nav-link"><i class="undefined"></i>
+  枚举
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/declare.html" class="nav-link"><i class="undefined"></i>
+  声明
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interface.html" class="nav-link"><i class="undefined"></i>
+  接口
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/configs.html" class="nav-link"><i class="undefined"></i>
+  项目配置
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/other.html" class="nav-link"><i class="undefined"></i>
+  其它
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/ts/interview.html" class="nav-link"><i class="undefined"></i>
+  面试相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/project/module.html" class="nav-link"><i class="undefined"></i>
+  模块化
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/web-components.html" class="nav-link"><i class="undefined"></i>
+  web-components
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/microFrontends.html" class="nav-link"><i class="undefined"></i>
+  microFrontends
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/lerna.html" class="nav-link"><i class="undefined"></i>
+  多模块仓库
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/ast.html" class="nav-link"><i class="undefined"></i>
+  AST
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/project/babel.html" class="nav-link"><i class="undefined"></i>
+  Babel
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-coding"></i>
+      react
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/react/react-base.html" class="nav-link"><i class="undefined"></i>
+  react基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/react-super.html" class="nav-link"><i class="undefined"></i>
+  react进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-hooks.html" class="nav-link"><i class="undefined"></i>
+  react-hooks
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-vdom.html" class="nav-link"><i class="undefined"></i>
+  react虚拟Dom
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-diff.html" class="nav-link"><i class="undefined"></i>
+  diff算法
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-fiber.html" class="nav-link"><i class="undefined"></i>
+  react-fiber
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-comp.html" class="nav-link"><i class="undefined"></i>
+  react-comp
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/redux.html" class="nav-link"><i class="undefined"></i>
+  redux
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/react/react-redux.html" class="nav-link"><i class="undefined"></i>
+  react-redux
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-document"></i>
+      vue
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/vue/base.html" class="nav-link"><i class="undefined"></i>
+  vue2.0基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/super.html" class="nav-link"><i class="undefined"></i>
+  vue2.0进阶
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-cli.html" class="nav-link"><i class="undefined"></i>
+  vue-cli源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vuex.html" class="nav-link"><i class="undefined"></i>
+  vuex源码分析
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router-base.html" class="nav-link"><i class="undefined"></i>
+  vue-router基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-router.html" class="nav-link"><i class="undefined"></i>
+  vue-router源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue-ssr.html" class="nav-link"><i class="undefined"></i>
+  vue-ssr
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue2-source.html" class="nav-link"><i class="undefined"></i>
+  vue2.x
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/vue/vue3-source.html" class="nav-link"><i class="undefined"></i>
+  vue3.x源码
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      node
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/node/command.html" class="nav-link"><i class="undefined"></i>
+  命令行工具
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/base.html" class="nav-link"><i class="undefined"></i>
+  node基础
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/event.html" class="nav-link"><i class="undefined"></i>
+  事件循环
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/koa.html" class="nav-link"><i class="undefined"></i>
+  koa源码
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/protocol.html" class="nav-link"><i class="undefined"></i>
+  网络协议
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/node/node-decorators.html" class="nav-link"><i class="undefined"></i>
+  装饰器
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      其它
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blogs/other/performance1.html" class="nav-link"><i class="undefined"></i>
+  性能优化一
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/mini-app.html" class="nav-link"><i class="undefined"></i>
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/blogs/other/canvas.html" class="nav-link"><i class="undefined"></i>
+  Canvas
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/artadmire" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>浏览器</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blogs/network/obj.html" class="sidebar-link">浏览器对象模型</a></li><li><a href="/blogs/network/event.html" class="sidebar-link">浏览器事件</a></li><li><a href="/blogs/network/request.html" class="sidebar-link">浏览器请求</a></li><li><a href="/blogs/network/history.html" class="sidebar-link">浏览器历史记录</a></li><li><a href="/blogs/network/broswer.html" aria-current="page" class="active sidebar-link">浏览器的渲染原理</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-067bd032 data-v-999d3bb4><h3 class="title" data-v-067bd032 data-v-067bd032></h3> <!----> <label id="box" class="inputBox" data-v-067bd032 data-v-067bd032><input type="password" value="" data-v-067bd032> <span data-v-067bd032>Konck! Knock!</span> <button data-v-067bd032>OK</button></label> <div class="footer" data-v-067bd032 data-v-067bd032><span data-v-067bd032><i class="iconfont reco-theme" data-v-067bd032></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-067bd032>vuePress-theme-reco</a></span> <span data-v-067bd032><i class="iconfont reco-copyright" data-v-067bd032></i> <a data-v-067bd032><span data-v-067bd032>maile</span>
+            
+          <span data-v-067bd032>2017 - </span>
+          2022
+        </a></span></div></div> <div data-v-999d3bb4><main class="page"><section><div class="page-title"><h1 class="title">浏览器的渲染原理</h1> <div data-v-10e19382><i class="iconfont reco-account" data-v-10e19382><span data-v-10e19382>maile</span></i> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h1 id="浏览器的渲染原理"><a href="#浏览器的渲染原理" class="header-anchor">#</a> 浏览器的渲染原理</h1> <p>一道经典的面试题，从输入URL到页面展现的过程：</p> <p>浏览器的生命周期：</p> <p><img src="/assets/img/browser1.ef6d2b79.png" alt="浏览器的生命周期"></p> <p>总结为以下几个阶段：</p> <ul><li>浏览器接收到url到网络请求线程的开启</li> <li>一个完整的HTTP请求的发出</li> <li>服务器接收到请求并转到具体的处理后台</li> <li>前后台之间的HTTP请求交互和涉及到的缓存</li> <li>浏览器接收到数据包后的关键渲染路径</li> <li>JS引擎的解析过程</li></ul> <h2 id="_1-浏览器接收到url到请求线程的开启"><a href="#_1-浏览器接收到url到请求线程的开启" class="header-anchor">#</a> 1. 浏览器接收到URL到请求线程的开启</h2> <h3 id="进程与线程的相关"><a href="#进程与线程的相关" class="header-anchor">#</a> 进程与线程的相关：</h3> <ul><li>进程是操作系统分配资源的最小单位，线程是程序执行的最小单位。</li> <li>只要某个线程执行出错，将会导致成个进程崩溃</li> <li>一个进程由一个或多个线程组成，线程是一个进程中代码的不同执行路线；</li> <li>进程之间相互独立，但同一进程下的各个线程之间共享程序的内存空间(包括代码段、数据集、堆等)及一些进程级的资源(如打开文件和信号)。</li> <li>调度和切换：线程上下文切换比进程上下文切换要快得多。</li> <li>线程之间可以共享所属进程的资源</li> <li>进程所占资源会在其关闭后由系统收回，即使进程中某个线程产生内存泄漏</li></ul> <h3 id="单进程的浏览器"><a href="#单进程的浏览器" class="header-anchor">#</a> 单进程的浏览器</h3> <p>在2008年谷歌发布chrome多进程浏览器之前，市面上几乎所有的浏览器都是单进程的。</p> <ul><li><p>● 不稳定：
+早期浏览器需要借助插件来实现诸如Web视频、Web游戏等各种强大的功能，但是插件是最容易出问题的模块，并且还运行在浏览器进程之中，所以一个插件的崩溃会引起整个浏览器的崩溃。除了插件以外，渲染引擎模块也是不稳定的，通常一些复杂的JavaScript代码就有可能引起渲染引擎的崩溃。和插件一样，渲染引擎的崩溃也会引起整个浏览器的崩溃。</p></li> <li><p>● 不流畅：
+首先是页面内存泄漏，在打开关闭一个页面的之后，通常会有一些内存不能回首收，随着使用时间的增加，占用的内存就越多，浏览器就会越来越慢。另外假如有一个工人专门干页面渲染的活，老板为了省钱雇了一个老人，干活很慢</p></li> <li><p>● 不安全：
+插件可以使用C/C++等代码编写，通过插件可以获取到操作系统的任意资源，这意味着当你在页面运行一个插件的时候这个插件可以完全操作你的电脑，如果是个恶意插件它就可以释放病毒，窃取你的账号密码，引发安全性问题。</p></li></ul> <h3 id="多进程浏览器"><a href="#多进程浏览器" class="header-anchor">#</a> 多进程浏览器</h3> <p>最新的Chrome浏览器包含：1个浏览器主进程，1个GPU进程，1个网络进程，多个渲染进程（沙箱），和多个插件进程（沙箱）</p> <p><img src="/assets/img/browser2.b17bc709.png" alt="多进程浏览器"></p> <ul><li><strong>浏览器主进程</strong>： 负责管制浏览器除标签页外的界面，包含地址栏、书签、后退后退按钮等，以及负责与其余进程的协调工作，同时提供存储性能。</li> <li><strong>GPU进程</strong>：负责整个浏览器界面的渲染。Chrome刚开始公布的时候是没有GPU进程的，而应用GPU的初衷是为了实现3D的CSS效果，后来随着网页及浏览器在界面中的使用越来越广泛，Chrome便在浏览器中加入了GPU进程。</li> <li><strong>网络进程</strong>：负责发动和承受网络申请，以前是作为模块运行在浏览器进程的，后面才独立进去，成为一个独自的进程</li> <li><strong>插件进程</strong>：主要是负责插件的运行，因为插件可能解体，所以须要通过插件过程来隔离，以保障插件解体也不会对浏览器和页面造成影响</li> <li><strong>渲染进程</strong>：负责管制显示tab标签页内的所有内容，外围工作是将HTML、CSS、JS转为用户能够与之交互的网页，排版引擎Blink和JS引擎V8都是运行在该过程中，默认状况下Chrome会为每个Tab标签页创立一个渲染过程</li></ul> <h3 id="渲染过程中的线程"><a href="#渲染过程中的线程" class="header-anchor">#</a> 渲染过程中的线程</h3> <p><img src="/assets/img/browaer3.ff41698c.png" alt="多进程线程"></p> <ul><li><p><strong>GUI渲染线程：</strong> 负责渲染页面，解析html和CSS、构建DOM树、CSSOM树、渲染树、和绘制页面，重绘重排也是在该线程执行</p></li> <li><p><strong>JS引擎线程：</strong> 一个tab页中只有一个JS引擎线程(单线程)，负责解析和执行JS。它GUI渲染过程不能同时执行，只能一个一个来，如果JS执行过长就会导致阻塞掉帧</p></li> <li><p><strong>计时器线程：</strong> 指setInterval和setTimeout，因为JS引擎是单线程的，所以如果处于阻塞状态，那么计时器就会不准了，所以须要独自的线程来负责计时器工作</p></li> <li><p><strong>异步http申请线程：</strong> XMLHttpRequest连贯后浏览器开的一个线程，比方申请有回调函数，异步线程就会将回调函数退出事件队列，期待JS引擎闲暇执行</p></li> <li><p><strong>事件触发线程：</strong> 次要用来管制事件循环，比方JS执行遇到计时器，AJAX异步申请等，就会将对应工作增加到事件触发线程中，在对应事件合乎触发条件触发时，就把事件增加到待处理队列的队尾，等JS引擎解决</p></li></ul> <h3 id="多标签之间怎么通信"><a href="#多标签之间怎么通信" class="header-anchor">#</a> 多标签之间怎么通信？</h3> <p>没有方法间接通信，须要有一个相似中介者进行音讯的转发和接管，比方</p> <ul><li><p><strong>localStorage</strong>：在一个标签页监听localStorage的变动，而后当另一个标签页批改的时候，能够通过监听获取新数据</p></li> <li><p><strong>WebSocket</strong>：因为websocket能够实现实时服务器推送，所以服务器就能够来当这个中介者。标签页通过向服务器发送数据，而后服务器再向其余标签推送转发</p></li> <li><p>**ShareWorker：**会在页面的生命周期内创立一个惟一的线程，并开启多个页面也只会应用同一个线程，标签页共享一个线程</p></li> <li><p><strong>postMessage：</strong></p></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code> <span class="token comment">// 发送方</span>
+  window<span class="token punctuation">.</span><span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pastMessage</span><span class="token punctuation">(</span><span class="token string">'发送的数据'</span><span class="token punctuation">,</span><span class="token string">'http://接管的址'</span><span class="token punctuation">)</span>
+  <span class="token comment">// 接管方</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> <span class="token keyword">let</span> data <span class="token operator">=</span> e<span class="token punctuation">.</span>data <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="你晓得僵尸过程和孤儿过程吗"><a href="#你晓得僵尸过程和孤儿过程吗" class="header-anchor">#</a> 你晓得僵尸过程和孤儿过程吗？</h3> <ul><li><p><strong>孤儿过程：</strong> 故名思义，就是没爹的孩子。父过程退出了，而它的一个或多个过程还在运行，那么这些子过程都会成为孤儿过程。这些孤儿都将被init过程收养，并负责这些孤儿的当前</p></li> <li><p><strong>僵尸过程：</strong> 就是子过程比父过程先完结，而父过程又没有开释子过程占用的资源，那么子过程的形容还留在零碎中，这种过程就是僵尸过程</p></li></ul> <h2 id="_2-http请求的建立"><a href="#_2-http请求的建立" class="header-anchor">#</a> 2. HTTP请求的建立</h2> <h3 id="dns域名解析"><a href="#dns域名解析" class="header-anchor">#</a> DNS域名解析</h3> <p>解析过程如下图：</p> <p><img src="/assets/img/browser4.871323ed.png" alt="解析过程"></p> <h3 id="网络模型"><a href="#网络模型" class="header-anchor">#</a> 网络模型</h3> <p>在通过DNS解析获取到目标服务器IP地址后，就可以建立网络连接进行资源的请求与响应了。但在此之前，我们需要对网络架构模型有一些基本的认识，在互联网发展初期，为了使网络通信能够更加灵活、稳定及可互操作，国际标准化组织提出了一些网络架构模型：OSI模型、TCP/IP模型（应用层，会话层，表示层并为应用层）。</p> <p><img src="/assets/img/browser4.871323ed.png" alt="OSI七层模型"></p> <h3 id="tcp连接"><a href="#tcp连接" class="header-anchor">#</a> TCP连接</h3> <p>传输层常见的协议有TCP协议和UDP协议。</p> <p>由于TCP是面向有连接的通信协议，所以在数据传输之前需要建立好客户端与服务器端之间的连接，即通常所说的“三次握手”，具体过程分为如下步骤：</p> <ul><li>（1）客户端生成一个随机数seq，假设其值为t，并将标志位SYN设为1，将这些数据打包发给服务器端后，客户端进入等待服务器端确认的状态。</li> <li>（2）服务器端收到客户端发来的SYN=1的数据包后，知道这是在请求建立连接，于是服务器端将SYN与ACK均置为1，并将请求包中客户端发来的随机数t加1后赋值给ack，然后生成一个服务器端的随机数seq=k，完成这些操作后，服务器端将这些数据打包再发回给客户端，作为对客户端建立连接请求的确认应答。</li> <li>（3）客户端收到服务器端的确认应答后，检查数据包中ack的字段值是否为t+1，ACK是否等于1，若都正确就将服务器端发来的随机数加1（ack=k+1），将ACK=1的数据包再发送给服务器端以确认服务器端的应答，服务器端收到应答包后通过检查ack是否等于k+1来确认连接是否建立成功。</li></ul> <p>当用户关闭标签页或请求完成后，TCP连接会进行“四次挥手”：</p> <ul><li>（1）由客户端先向服务器端发送FIN=M的指令，随后进入完成等待状态FIN_WAIT_1，表明客户端已经没有再向服务器端发送的数据，但若服务器端此时还有未完成的数据传递，可继续传递数据。</li> <li>（2）当服务器端收到客户端的FIN报文后，会先发送ack=M+1的确认，告知客户端关闭请求已收到，但可能由于服务器端还有未完成的数据传递，所以请客户端继续等待。</li> <li>（3）当服务器端确认已完成所有数据传递后，便发送带有FIN=N的报文给客户端，准备关闭连接。</li> <li>（4）客户端收到FIN=N的报文后可进行关闭操作，但为保证数据正确性，会回传给服务器端一个确认报文ack=N+1，同时服务器端也在等待客户端的最终确认，如果服务器端没有收到报文则会进行重传，只有收到报文后才会真正断开连接。而客户端在发送了确认报文一段时间后，没有收到服务器端任何信息则认为服务器端连接已关闭，也可关闭客户端信息。</li></ul> <h2 id="_3-前后端交互"><a href="#_3-前后端交互" class="header-anchor">#</a> 3.前后端交互</h2> <h3 id="浏览器缓存"><a href="#浏览器缓存" class="header-anchor">#</a> 浏览器缓存</h3> <p>在基于HTTP的前后端交互过程中，使用缓存可以使性能得到显著提升。具体的缓存策略分为两种：强缓存和协商缓存。</p> <p><strong>1. 强制缓存</strong></p> <p>控制强制缓存的字段分别是Expires和Cache-Control，其中Cache-Control优先级比Expires高。</p> <p><strong>Expires</strong></p> <p>Expires是HTTP/1.0控制网页缓存的字段，其值为服务器返回该请求结果缓存的到期时间，即再次发起该请求时，如果客户端的时间小于Expires的值时，直接使用缓存结果。</p> <p>到了HTTP/1.1，Expire已经被Cache-Control替代，原因在于Expires控制缓存的原理是使用客户端的时间与服务端返回的时间做对比，那么如果客户端与服务端的时间因为某些原因（例如时区不同；客户端和服务端有一方的时间不准确）发生误差，那么强制缓存则会直接失效，这样的话强制缓存的存在则毫无意义，那么Cache-Control又是如何控制的呢？</p> <p><strong>Cache-Control</strong></p> <p>在HTTP/1.1中，Cache-Control是最重要的规则，主要用于控制网页缓存，主要取值为：</p> <p><strong>public：</strong> 所有内容都将被缓存（客户端和代理服务器都可缓存）</p> <p><strong>private</strong>：所有内容只有客户端可以缓存，Cache-Control的默认取值</p> <p><strong>no-cache：</strong> 客户端缓存内容，但是是否使用缓存则需要经过协商缓存来验证决定</p> <p><strong>no-store：</strong> 所有内容都不会被缓存，即不使用强制缓存，也不使用协商缓存</p> <p><strong>max-age=xxx</strong> (xxx is numeric)：缓存内容将在xxx秒后失效</p> <p>max-age=600，意思就是说在600秒内再次发起该请求，则会直接使用缓存结果，强制缓存生效。</p> <p><strong>缓存位置：</strong></p> <table><thead><tr><th></th> <th>memory cache</th> <th>disk cache</th></tr></thead> <tbody><tr><td>相同点</td> <td>只能存储一些派生类资源文件</td> <td>只能存储一些派生类资源文件</td></tr> <tr><td>不同点</td> <td>退出进程时数据会被清除</td> <td>退出进程时数据不会被清除</td></tr> <tr><td>存储资源</td> <td>一般脚本、字体、图片会存在内存当中</td> <td>一般非脚本会存在内存当中，如css等</td></tr></tbody></table> <p><strong>2. 协商缓存</strong></p> <p>协商缓存就是强制缓存失效后，浏览器携带缓存标识向服务器发起请求，由服务器根据缓存标识决定是否使用缓存的过程，主要有以下两种情况：</p> <p>协商缓存的标识也是在响应报文的HTTP头中和请求结果一起返回给浏览器的，控制协商缓存的字段分别有：Last-Modified / If-Modified-Since和Etag / If-None-Match，其中Etag / If-None-Match的优先级比Last-Modified / If-Modified-Since高。</p> <p><strong>Last-Modified / If-Modified-Since</strong></p> <p>Last-Modified是服务器响应请求时，返回该资源文件在服务器最后被修改的时间。if-Modified-Since则是客户端再次发起该请求时，携带上次请求返回的Last-Modified值，通过此字段值告诉服务器该资源上次请求返回的最后被修改时间。服务器收到该请求，发现请求头含有If-Modified-Since字段，则会根据If-Modified-Since的字段值与该资源在服务器的最后被修改时间做对比，若服务器的资源最后被修改时间大于If-Modified-Since的字段值，则重新返回资源，状态码为200；否则则返回304，代表资源无更新，可继续使用缓存文件。</p> <p>缺点:</p> <p>短时间内资源发生了改变，Last-Modified 并不会发生变化。</p> <p>周期性变化。如果这个资源在一个周期内修改回原来的样子了，我们认为是可以使用缓存的，但是 Last-Modified 可不这样认为,因此便有了 ETag。</p> <p><strong>Etag / If-None-Match</strong></p> <p>Etag是服务器响应请求时，返回当前资源文件的一个唯一标识(由服务器生成)。If-None-Match是客户端再次发起该请求时，携带上次请求返回的唯一标识Etag值，通过此字段值告诉服务器该资源上次请求返回的唯一标识值。服务器收到该请求后，发现该请求头中含有If-None-Match，则会根据If-None-Match的字段值与该资源在服务器的Etag值做对比，一致则返回304，代表资源无更新，继续使用缓存文件；不一致则重新返回资源文件，状态码为200。</p> <p>总结一下：</p> <p><img src="/assets/img/cache.ccf8dc23.png" alt="总结"></p> <h2 id="_4-关键路径的渲染"><a href="#_4-关键路径的渲染" class="header-anchor">#</a> 4. 关键路径的渲染</h2> <p>浏览器渲染页面的整个过程：浏览器会从上到下解析文档：</p> <ol><li><p>遇见 HTML 标记，调用HTML解析器解析为对应的 token （一个token就是一个标签文本的序列化）并构建 DOM 树（就是一块内存，保存着tokens，建立它们之间的关系）。</p></li> <li><p>遇见 style/link 标记调用相应解析器处理CSS标记，并构建出CSS样式树。</p></li> <li><p>遇见 script 标记 调用javascript引擎 处理script标记、绑定事件、修改DOM树/CSS树等</p></li> <li><p>将 DOM树 与 CSS树 合并成一个渲染树。</p></li> <li><p>根据渲染树来渲染，以计算每个节点的几何信息（这一过程需要依赖GPU）。布局</p></li> <li><p>最终将各个节点绘制到屏幕上。绘制</p></li></ol> <h2 id="参考文章链接"><a href="#参考文章链接" class="header-anchor">#</a> 参考文章链接：</h2> <ul><li>《web性能权威指南》</li> <li>《web性能优化》-- 田佳奇</li> <li><a href="https://blog.csdn.net/qq_41831345/article/details/109146388" target="_blank" rel="noopener noreferrer">彻底搞懂浏览器缓存机制<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://blog.csdn.net/qq_41831345/article/details/117790383" target="_blank" rel="noopener noreferrer">深入理解性能优化方案<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/11/2022, 10:45:49 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/blogs/network/history.html" class="prev">
+            浏览器历史记录
+          </a></span> <!----></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-92abcef6><li class="level-2" data-v-92abcef6><a href="/blogs/network/broswer.html#_1-浏览器接收到url到请求线程的开启" class="sidebar-link reco-side-_1-浏览器接收到url到请求线程的开启" data-v-92abcef6>1. 浏览器接收到URL到请求线程的开启</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#进程与线程的相关" class="sidebar-link reco-side-进程与线程的相关" data-v-92abcef6>进程与线程的相关：</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#单进程的浏览器" class="sidebar-link reco-side-单进程的浏览器" data-v-92abcef6>单进程的浏览器</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#多进程浏览器" class="sidebar-link reco-side-多进程浏览器" data-v-92abcef6>多进程浏览器</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#渲染过程中的线程" class="sidebar-link reco-side-渲染过程中的线程" data-v-92abcef6>渲染过程中的线程</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#多标签之间怎么通信" class="sidebar-link reco-side-多标签之间怎么通信" data-v-92abcef6>多标签之间怎么通信？</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#你晓得僵尸过程和孤儿过程吗" class="sidebar-link reco-side-你晓得僵尸过程和孤儿过程吗" data-v-92abcef6>你晓得僵尸过程和孤儿过程吗？</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/network/broswer.html#_2-http请求的建立" class="sidebar-link reco-side-_2-http请求的建立" data-v-92abcef6>2. HTTP请求的建立</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#dns域名解析" class="sidebar-link reco-side-dns域名解析" data-v-92abcef6>DNS域名解析</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#网络模型" class="sidebar-link reco-side-网络模型" data-v-92abcef6>网络模型</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#tcp连接" class="sidebar-link reco-side-tcp连接" data-v-92abcef6>TCP连接</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/network/broswer.html#_3-前后端交互" class="sidebar-link reco-side-_3-前后端交互" data-v-92abcef6>3.前后端交互</a></li><li class="level-3" data-v-92abcef6><a href="/blogs/network/broswer.html#浏览器缓存" class="sidebar-link reco-side-浏览器缓存" data-v-92abcef6>浏览器缓存</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/network/broswer.html#_4-关键路径的渲染" class="sidebar-link reco-side-_4-关键路径的渲染" data-v-92abcef6>4. 关键路径的渲染</a></li><li class="level-2" data-v-92abcef6><a href="/blogs/network/broswer.html#参考文章链接" class="sidebar-link reco-side-参考文章链接" data-v-92abcef6>参考文章链接：</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a008c6ba data-v-a008c6ba><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a008c6ba><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a008c6ba></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a008c6ba></path></svg></div></div></div>
+    <script src="/assets/js/app.830a5cc9.js" defer></script><script src="/assets/js/3.4d73c9a6.js" defer></script><script src="/assets/js/1.aba2294e.js" defer></script><script src="/assets/js/12.051a4c3d.js" defer></script>
+  </body>
+</html>
